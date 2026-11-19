@@ -1,0 +1,124 @@
+/* ================================================================
+   GUIA E SOBRE — ESTILOS DAS PÁGINAS TEXTUAIS
+   
+   O que faz: Estiliza os cards numerados do guia de protocolo e
+              as seções de leitura da página sobre.
+   Depende de: variaveis.css, layout.css
+   Mexe em: guia-protocolo.html e sobre.html
+   ================================================================ */
+
+.pagina-conteudo {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.titulo-pagina {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--cor-primaria-escura);
+  margin-bottom: var(--espaco-pequeno);
+}
+
+.subtitulo-pagina {
+  text-align: center;
+  color: var(--cor-texto-leve);
+  font-size: 1.125rem;
+  margin-bottom: var(--espaco-grande);
+}
+
+/* Estilos para o Guia de Protocolo (Passos) */
+.passos-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-medio);
+  margin-bottom: var(--espaco-grande);
+}
+
+.passo-card {
+  display: flex;
+  background-color: var(--cor-fundo-caixa);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--borda-arredondada);
+  padding: var(--espaco-medio);
+  gap: var(--espaco-medio);
+  align-items: flex-start;
+}
+
+.passo-numero {
+  background-color: var(--cor-primaria);
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.passo-conteudo h2 {
+  font-size: 1.25rem;
+  margin-bottom: var(--espaco-pequeno);
+  color: var(--cor-primaria);
+}
+
+.passo-conteudo p {
+  color: var(--cor-texto);
+  margin-bottom: 0;
+}
+
+/* Caixa de Aviso Importante */
+.aviso-importante {
+  background-color: #fffbeb;
+  border-left: 4px solid var(--cor-alerta);
+  padding: var(--espaco-medio);
+  border-radius: var(--borda-arredondada);
+}
+
+.aviso-importante h3 {
+  color: var(--cor-alerta);
+  margin-bottom: var(--espaco-pequeno);
+}
+
+/* Estilos para a Página Sobre (Blocos de Texto) */
+.bloco-texto {
+  background-color: var(--cor-fundo-caixa);
+  padding: var(--espaco-grande);
+  border-radius: var(--borda-arredondada);
+  margin-bottom: var(--espaco-grande);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.bloco-texto h2 {
+  color: var(--cor-primaria-escura);
+  margin-bottom: var(--espaco-medio);
+  font-size: 1.5rem;
+  border-bottom: 2px solid var(--cor-borda);
+  padding-bottom: var(--espaco-pequeno);
+}
+
+.bloco-texto p {
+  margin-bottom: var(--espaco-medio);
+  line-height: 1.8;
+}
+
+.bloco-texto ul {
+  margin-left: var(--espaco-grande);
+  margin-bottom: var(--espaco-medio);
+}
+
+.bloco-texto li {
+  margin-bottom: var(--espaco-pequeno);
+}
+
+.destaque-privacidade {
+  background-color: #f0fdf4;
+  border: 1px solid #bbf7d0;
+}
+
+.destaque-privacidade h2 {
+  color: var(--cor-sucesso);
+  border-bottom-color: #bbf7d0;
+}

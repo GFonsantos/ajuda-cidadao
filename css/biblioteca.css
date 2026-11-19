@@ -1,0 +1,112 @@
+/* ================================================================
+   BIBLIOTECA — ESTILOS DO CATÁLOGO
+   
+   O que faz: Estiliza a área de filtros (botões de categoria) e a
+              grade de resultados (cards dinâmicos).
+   Depende de: variaveis.css, componentes.css
+   Mexe em: biblioteca.html
+   ================================================================ */
+
+.area-controles {
+  background-color: var(--cor-fundo-caixa);
+  padding: var(--espaco-grande) var(--espaco-medio);
+  border-radius: var(--borda-arredondada);
+  margin-bottom: var(--espaco-grande);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* =========================================
+   AJUSTE DO CAMPO DE BUSCA NA BIBLIOTECA
+   (Como aqui não tem botão, precisamos
+   restaurar a borda direita e tirar a sombra)
+   ========================================= */
+.area-controles .busca-container {
+  box-shadow: none; /* Remove a sombra da Home */
+  margin-bottom: var(--espaco-medio);
+}
+
+.area-controles .busca-container input {
+  border: 2px solid var(--cor-borda); /* Devolve a borda completa */
+  border-radius: var(--borda-arredondada);
+  background-color: var(--cor-fundo);
+}
+
+.area-controles .busca-container input:focus {
+  border-color: var(--cor-primaria);
+  background-color: var(--cor-fundo-caixa);
+}
+
+.filtros-categoria {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espaco-pequeno);
+  justify-content: center;
+  margin-top: var(--espaco-medio);
+}
+
+.filtro-btn {
+  background-color: var(--cor-fundo);
+  border: 1px solid var(--cor-borda);
+  padding: 0.5rem 1rem;
+  border-radius: 20px; /* Formato de pílula */
+  cursor: pointer;
+  font-size: 0.875rem;
+  color: var(--cor-texto);
+  transition: all 0.2s;
+}
+
+.filtro-btn:hover {
+  border-color: var(--cor-primaria);
+  color: var(--cor-primaria);
+}
+
+.filtro-btn.ativo {
+  background-color: var(--cor-primaria);
+  color: white;
+  border-color: var(--cor-primaria);
+}
+
+/* Grade de Resultados */
+.grid-resultados {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--espaco-medio);
+}
+
+@media (min-width: 768px) {
+  .grid-resultados {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-resultados {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Tag de categoria dentro do card */
+.card-tag {
+  display: inline-block;
+  background-color: var(--cor-primaria-clara);
+  color: var(--cor-primaria);
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  margin-bottom: var(--espaco-pequeno);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Ajuste para o botão dentro do card da biblioteca */
+.card .btn-card {
+  margin-top: auto; /* Empurra o botão para o fundo do card */
+}
+
+.carregando {
+  text-align: center;
+  color: var(--cor-texto-leve);
+  grid-column: 1 / -1;
+  padding: var(--espaco-grande);
+}

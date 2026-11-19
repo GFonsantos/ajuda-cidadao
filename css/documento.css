@@ -1,0 +1,161 @@
+/* ================================================================
+   DOCUMENTO — LAYOUT DO PREENCHEDOR E IMPRESSÃO
+   
+   O que faz: Divide a tela em formulário (esq) e documento (dir).
+              Cria a folha A4 branca. Esconde o site na impressão.
+   Depende de: variaveis.css, layout.css, componentes.css
+   Mexe em: documento.html
+   ================================================================ */
+
+.btn-voltar {
+  display: inline-block;
+  margin-bottom: var(--espaco-medio);
+  color: var(--cor-texto-leve);
+  font-weight: bold;
+}
+.btn-voltar:hover {
+  color: var(--cor-primaria);
+  text-decoration: none;
+}
+
+.cabecalho-documento {
+  margin-bottom: var(--espaco-grande);
+  padding-bottom: var(--espaco-medio);
+  border-bottom: 2px solid var(--cor-borda);
+}
+
+.resumo-doc {
+  color: var(--cor-texto-leve);
+  font-size: 1.125rem;
+  margin-top: var(--espaco-pequeno);
+}
+
+/* Layout de duas colunas */
+.layout-documento {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--espaco-grande);
+  align-items: start;
+}
+
+@media (min-width: 992px) {
+  .layout-documento {
+    grid-template-columns: 350px 1fr; /* Formulário fixo, documento cresce */
+  }
+}
+
+/* --- COLUNA 1: FORMULÁRIO --- */
+.area-formulario {
+  background-color: var(--cor-fundo-caixa);
+  padding: var(--espaco-medio);
+  border-radius: var(--borda-arredondada);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 100px; /* Fica fixo enquanto rola o documento */
+}
+
+.area-formulario h2, .area-documento h2 {
+  font-size: 1.25rem;
+  margin-bottom: var(--espaco-pequeno);
+}
+
+.aviso-privacidade {
+  font-size: 0.875rem;
+  color: var(--cor-sucesso);
+  background-color: #f0fdf4;
+  padding: var(--espaco-pequeno);
+  border-radius: var(--borda-arredondada);
+  margin-bottom: var(--espaco-medio);
+  border: 1px solid #bbf7d0;
+}
+
+/* Estilo dos campos gerados dinamicamente */
+.campo-grupo {
+  margin-bottom: var(--espaco-medio);
+}
+.campo-grupo label {
+  display: block;
+  font-weight: bold;
+  font-size: 0.875rem;
+  margin-bottom: 0.25rem;
+  color: var(--cor-texto);
+}
+.campo-grupo input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--borda-arredondada);
+  font-family: var(--fonte-base);
+  font-size: 1rem;
+}
+.campo-grupo input:focus {
+  outline: 2px solid var(--cor-primaria);
+  border-color: transparent;
+}
+
+/* --- COLUNA 2: DOCUMENTO --- */
+.acoes-documento {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: var(--espaco-medio);
+}
+
+.btn-imprimir {
+  background-color: var(--cor-primaria);
+  color: white;
+  border: none;
+  padding: var(--espaco-medio) var(--espaco-grande);
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: var(--borda-arredondada);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.btn-imprimir:hover {
+  background-color: var(--cor-primaria-escura);
+}
+
+/* A FOLHA A4 */
+.folha-a4 {
+  background-color: white;
+  padding: 3cm 2cm; /* Margens padrão de documento */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border: 1px solid var(--cor-borda);
+  min-height: 29.7cm; /* Altura de uma folha A4 */
+  font-family: 'Times New Roman', Times, serif; /* Fonte formal para documentos */
+  font-size: 12pt;
+  line-height: 1.5;
+  text-align: justify;
+  white-space: pre-wrap; /* Respeita as quebras de linha do JSON */
+  color: #000;
+}
+
+/* ================================================================
+   REGRAS DE IMPRESSÃO (A MÁGICA)
+   Quando o usuário manda imprimir, tudo isso entra em ação.
+   ================================================================ */
+@media print {
+  /* Esconde tudo que tem a classe no-print (menu, rodapé, formulário, botões) */
+  .no-print {
+    display: none !important;
+  }
+
+  /* Zera as margens do site */
+  body, main, .container {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: white !important;
+  }
+
+  /* Configura a folha A4 para impressão real */
+  .folha-a4 {
+    border: none;
+    box-shadow: none;
+    padding: 0; /* Margens da impressora cuidam disso */
+    margin: 0;
+    width: 100%;
+    min-height: auto;
+  }
+}

@@ -1,0 +1,127 @@
+/* ================================================================
+   COMPONENTES — ELEMENTOS REUTILIZÁVEIS
+   
+   O que faz: Estiliza botões, inputs, a barra de acessibilidade e
+              os cartões (cards) que serão usados em várias páginas.
+   Depende de: variaveis.css
+   Mexe em: Qualquer página que use esses componentes.
+   ================================================================ */
+
+/* Barra de Acessibilidade */
+.barra-acessibilidade {
+  display: flex;
+  gap: var(--espaco-pequeno);
+}
+
+.barra-acessibilidade button {
+  background: none;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--borda-arredondada);
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  font-weight: bold;
+  color: var(--cor-texto);
+}
+
+.barra-acessibilidade button:hover {
+  background-color: var(--cor-primaria-clara);
+  border-color: var(--cor-primaria);
+}
+
+/* Campo de Busca */
+.busca-container {
+  display: flex;
+  width: 100%;
+  max-width: 600px;
+  margin: var(--espaco-medio) auto;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  border-radius: var(--borda-arredondada);
+  overflow: hidden;
+}
+
+.busca-container input {
+  flex: 1;
+  padding: var(--espaco-medio);
+  border: 2px solid var(--cor-borda);
+  border-right: none;
+  font-size: 1rem;
+  outline: none;
+}
+
+.busca-container input:focus {
+  border-color: var(--cor-primaria);
+}
+
+.busca-container button {
+  background-color: var(--cor-primaria);
+  color: white;
+  border: 2px solid var(--cor-primaria);
+  padding: 0 var(--espaco-grande);
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.busca-container button:hover {
+  background-color: var(--cor-primaria-escura);
+}
+
+/* Cartões (Cards) */
+.card {
+  background-color: var(--cor-fundo-caixa);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--borda-arredondada);
+  padding: var(--espaco-medio);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+  font-size: 1.125rem;
+  margin-bottom: var(--espaco-pequeno);
+}
+
+.card p {
+  color: var(--cor-texto-leve);
+  font-size: 0.875rem;
+  flex: 1; /* Empurra o botão para baixo */
+  margin-bottom: var(--espaco-medio);
+}
+
+.card .btn-card {
+  display: inline-block;
+  background-color: var(--cor-primaria-clara);
+  color: var(--cor-primaria);
+  padding: var(--espaco-pequeno) var(--espaco-medio);
+  border-radius: var(--borda-arredondada);
+  font-weight: bold;
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+.card .btn-card:hover {
+  background-color: var(--cor-primaria);
+  color: white;
+  text-decoration: none;
+}
+/* =========================================
+   LOGO DA MARCA
+   ========================================= */
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo-img {
+  max-height: 65px; /* Ajuste este valor se achar a logo muito grande/pequena */
+  width: auto;
+  display: block;
+}

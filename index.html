@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajuda Cidadão - Documentos Prontos e Gratuitos</title>
+    <meta name="description" content="Resolva problemas do dia a dia com modelos de documentos prontos e gratuitos. Sem cadastro, sem juridiquês.">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/componentes.css">
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+
+    <!-- CABEÇALHO PADRÃO -->
+    <header class="cabecalho">
+        <div class="cabecalho-conteudo">
+            <a href="index.html" class="logo" aria-label="Página inicial do Ajuda Cidadão">
+                <img src="assets/icons/logo.jpg" alt="Ajuda Cidadão" class="logo-img">
+            </a>
+            
+            <nav class="menu-principal" aria-label="Navegação principal">
+                <a href="index.html">Início</a>
+                <a href="biblioteca.html">Biblioteca</a>
+                <a href="guia-protocolo.html">Como Protocolar</a>
+                <a href="sobre.html">Privacidade</a>
+            </nav>
+
+            <div class="barra-acessibilidade" aria-label="Controles de acessibilidade">
+                <button id="btn-aumentar-fonte" title="Aumentar fonte">A+</button>
+                <button id="btn-diminuir-fonte" title="Diminuir fonte">A-</button>
+                <button id="btn-alto-contraste" title="Alternar alto contraste">Alto Contraste</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main>
+        <!-- SEÇÃO HERO -->
+        <section class="hero">
+            <h1>Resolva problemas do dia a dia com documentos prontos e gratuitos.</h1>
+            <p>Sem cadastro, sem login e sem guardar seus dados pessoais. Encontre o modelo que você precisa, preencha e protocole.</p>
+            
+            <div class="busca-container">
+                <label for="campo-busca" class="sr-only">O que você precisa resolver?</label>
+                <input type="text" id="campo-busca" placeholder="Ex: falta de remédio, buraco na rua, conta de luz...">
+                <button type="button" aria-label="Buscar">Buscar</button>
+            </div>
+        </section>
+
+        <!-- SEÇÃO DE CATEGORIAS -->
+        <h2 class="secao-titulo">Navegue por Categoria</h2>
+        <section class="grid-categorias">
+            <a href="biblioteca.html?cat=saude" class="card">
+                <h3>Saúde Pública</h3>
+                <p>Medicamentos, consultas e direitos no SUS.</p>
+                <span class="btn-card">Ver Modelos</span>
+            </a>
+            <a href="biblioteca.html?cat=consumidor" class="card">
+                <h3>Direitos do Consumidor</h3>
+                <p>Cobranças abusivas, cancelamentos e defeitos.</p>
+                <span class="btn-card">Ver Modelos</span>
+            </a>
+            <a href="biblioteca.html?cat=bairro" class="card">
+                <h3>Infraestrutura do Bairro</h3>
+                <p>Buracos na rua, iluminação e saneamento.</p>
+                <span class="btn-card">Ver Modelos</span>
+            </a>
+        </section>
+
+        <!-- SEÇÃO MAIS ACESSADOS -->
+        <h2 class="secao-titulo">Mais Acessados da Semana</h2>
+        <section class="grid-atalhos">
+            <a href="documento.html?id=saude-medicamento-sus" class="card">
+                <h3>Falta de remédio no SUS</h3>
+                <p>Cobre formalmente a entrega do medicamento.</p>
+                <span class="btn-card">Acessar Modelo</span>
+            </a>
+            <a href="documento.html?id=consumidor-cobranca-abusiva" class="card">
+                <h3>Conta de luz abusiva</h3>
+                <p>Conteste valores altos e peça revisão.</p>
+                <span class="btn-card">Acessar Modelo</span>
+            </a>
+            <a href="documento.html?id=bairro-tapa-buraco" class="card">
+                <h3>Buraco na rua</h3>
+                <p>Solicite o reparo do asfalto à prefeitura.</p>
+                <span class="btn-card">Acessar Modelo</span>
+            </a>
+        </section>
+
+    </main>
+
+    <!-- RODAPÉ PADRÃO -->
+    <footer class="rodape">
+        <p>Projeto Acadêmico de Utilidade Pública • 100% Gratuito e Sem Coleta de Dados</p>
+        <p>Telefones Úteis: SAMU 192 | Defesa Civil 199 | Disque Direitos Humanos 100</p>
+    </footer>
+
+    <!-- JS -->
+    <script src="js/app.js"></script>
+    <script src="js/home.js"></script>
+</body>
+</body>
+</html>

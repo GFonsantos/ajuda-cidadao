@@ -1,0 +1,50 @@
+/* ================================================================
+   HOME — ESTILOS DA PÁGINA INICIAL
+   
+   O que faz: Dá o visual de destaque (Hero) e organiza as grades
+              de categorias e atalhos da página index.html.
+   Depende de: variaveis.css, layout.css, componentes.css
+   Mexe em: index.html
+   ================================================================ */
+
+.hero {
+  background: linear-gradient(135deg, var(--cor-primaria) 0%, var(--cor-primaria-escura) 100%);
+  color: white;
+  padding: var(--espaco-grande) var(--espaco-medio);
+  text-align: center;
+}
+
+.hero h1 {
+  color: white;
+  font-size: 2rem;
+  max-width: 800px;
+  margin: 0 auto var(--espaco-medio) auto;
+}
+
+.hero p {
+  font-size: 1.125rem;
+  max-width: 600px;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+.secao-titulo {
+  text-align: center;
+  margin: var(--espaco-grande) 0 var(--espaco-medio) 0;
+  font-size: 1.5rem;
+}
+
+/* Grades de Categorias e Atalhos */
+.grid-categorias, .grid-atalhos {
+  display: grid;
+  grid-template-columns: 1fr; /* Mobile: 1 coluna */
+  gap: var(--espaco-medio);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--espaco-medio);
+}
+
+@media (min-width: 768px) {
+  .grid-categorias { grid-template-columns: repeat(3, 1fr); }
+  .grid-atalhos { grid-template-columns: repeat(3, 1fr); }
+}

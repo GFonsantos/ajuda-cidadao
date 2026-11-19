@@ -1,0 +1,61 @@
+/* ================================================================
+   LAYOUT — ESTRUTURA E POSICIONAMENTO
+   
+   O que faz: Organiza o cabeçalho, o rodapé e o container principal.
+              Define a grade responsiva (Mobile-First).
+   Depende de: variaveis.css
+   Mexe em: Estrutura das 5 páginas.
+   ================================================================ */
+
+/* Cabeçalho */
+.cabecalho {
+  background-color: var(--cor-fundo-caixa);
+  border-bottom: 1px solid var(--cor-borda);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.cabecalho-conteudo {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--espaco-medio);
+  display: flex;
+  flex-direction: column; /* Mobile-first: empilha no celular */
+  gap: var(--espaco-medio);
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .cabecalho-conteudo {
+    flex-direction: row; /* Desktop: alinha em linha */
+    justify-content: space-between;
+  }
+}
+
+.menu-principal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--espaco-medio);
+}
+
+.rodape {
+  background-color: var(--cor-texto);
+  color: var(--cor-fundo);
+  text-align: center;
+  padding: var(--espaco-grande) var(--espaco-medio);
+  margin-top: var(--espaco-grande);
+  font-size: 0.875rem;
+}
+
+.rodape p {
+  margin-bottom: var(--espaco-pequeno);
+}
+
+/* Container Principal (para as outras páginas) */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--espaco-grande) var(--espaco-medio);
+}

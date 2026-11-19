@@ -1,0 +1,72 @@
+/* ================================================================
+   BASE — RESET E ESTILOS FUNDAMENTAIS
+   
+   O que faz: Padroniza a aparência entre navegadores e define regras
+              básicas de acessibilidade e leitura.
+   Depende de: variaveis.css
+   Mexe em: Todo o DOM do site.
+   ================================================================ */
+
+@import url('variaveis.css');
+
+/* Reset básico */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Rolagem suave e fonte base */
+html {
+  scroll-behavior: smooth;
+  font-size: 16px; /* Base para o A+ e A- */
+}
+
+body {
+  font-family: var(--fonte-base);
+  color: var(--cor-texto);
+  background-color: var(--cor-fundo);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Acessibilidade: Foco visível para navegação por teclado */
+:focus-visible {
+  outline: 3px solid var(--cor-primaria);
+  outline-offset: 2px;
+}
+
+/* Elementos de mídia não vazam do container */
+img, svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Links básicos */
+a {
+  color: var(--cor-primaria);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Títulos */
+h1, h2, h3, h4 {
+  line-height: 1.2;
+  color: var(--cor-texto);
+  margin-bottom: var(--espaco-pequeno);
+}
+
+/* Acessibilidade: Esconde visualmente, mas mantém para leitores de tela */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

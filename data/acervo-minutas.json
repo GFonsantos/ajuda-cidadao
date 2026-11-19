@@ -1,0 +1,48 @@
+{
+  "minutas": [
+    {
+      "id": "saude-medicamento-sus",
+      "categoria": "Saúde Pública",
+      "titulo": "Solicitação de Medicamento Indisponível no SUS",
+      "resumo": "Use quando o remédio da sua receita estiver em falta na farmácia do posto de saúde.",
+      "onde_entregar": "Secretaria Municipal de Saúde ou Ouvidoria do SUS",
+      "documentos_anexos": ["Receita médica atualizada", "Cartão do SUS", "RG e CPF"],
+      "arquivo_pdf": "assets/modelos-pdf/saude-medicamento-sus.pdf",
+      "arquivo_docx": "assets/modelos-docx/saude-medicamento-sus.docx",
+      "texto_minuta": "AO ILUSTRÍSSIMO(A) SENHOR(A) SECRETÁRIO(A) DE SAÚDE DO MUNICÍPIO DE [NOME DO MUNICÍPIO]\n\nAssunto: Solicitação de medicamento indisponível na rede pública.\n\nEu, [SEU NOME COMPLETO], portador(a) do RG nº [NÚMERO DO RG], inscrito(a) no CPF sob o nº [NÚMERO DO CPF], residente e domiciliado(a) na [SEU ENDEREÇO COMPLETO], venho por meio desta requerer a entrega do medicamento [NOME DO MEDICAMENTO E DOSAGEM], devidamente prescrito na receita médica em anexo, emitida pelo(a) Dr(a). [NOME DO MÉDICO] (CRM [NÚMERO DO CRM]).\n\nInformo que tentei obter o referido medicamento na farmácia básica do posto de saúde no dia [DATA DA TENTATIVA], mas fui informado(a) de que o mesmo se encontra em falta no estoque.\n\nCom base no direito constitucional à saúde (Art. 196 da CF/88) e na Lei nº 8.080/1990, solicito a providência urgente para o fornecimento do remédio ou o encaminhamento para a farmácia de alto custo/regional que possua o item em estoque.\n\nAgradeço a atenção e aguardo resposta no prazo legal.\n\n[NOME DO MUNICÍPIO], [DATA ATUAL].\n\n_________________________________________\n[SEU NOME COMPLETO]\nTelefone: [SEU TELEFONE]\nE-mail: [SEU E-MAIL]"
+    },
+    {
+      "id": "consumidor-cobranca-abusiva",
+      "categoria": "Direitos do Consumidor",
+      "titulo": "Contestação de Cobrança Abusiva de Água ou Energia",
+      "resumo": "Para contestar faturas com valores absurdos, vazamentos não resolvidos ou cobranças indevidas.",
+      "onde_entregar": "Agência da concessionária (Águas/Energia) ou Procon",
+      "documentos_anexos": ["Cópia da fatura contestada", "Cópia da fatura do mês anterior (para comparativo)", "RG e CPF"],
+      "arquivo_pdf": "assets/modelos-pdf/consumidor-cobranca-abusiva.pdf",
+      "arquivo_docx": "assets/modelos-docx/consumidor-cobranca-abusiva.docx",
+      "texto_minuta": "À [NOME DA CONCESSIONÁRIA DE ÁGUA/ENERGIA]\n\nAssunto: Contestação de cobrança e pedido de revisão de fatura.\n\nEu, [SEU NOME COMPLETO], inscrito(a) no CPF sob o nº [NÚMERO DO CPF], titular da matrícula/instalação nº [NÚMERO DA MATRÍCULA], venho, com base no Código de Defesa do Consumidor (Lei nº 8.078/90), contestar formalmente a fatura referente ao mês de [MÊS/ANO], no valor de R$ [VALOR DA FATURA].\n\nO valor cobrado destoa completamente do meu histórico de consumo habitual. A fatura anterior foi de R$ [VALOR ANTERIOR] para um consumo de [CONSUMO ANTERIOR] m³/kWh, enquanto a atual cobra [CONSUMO ATUAL] m³/kWh.\n\nSolicito uma revisão detalhada da leitura e, caso constatado erro, a emissão de uma nova fatura com os valores corrigidos, abstendo-se de realizar cortes no fornecimento ou negativação do meu nome, conforme garante o Art. 42 do CDC.\n\nAnexo cópias das faturas para comparação.\n\n[NOME DO MUNICÍPIO], [DATA ATUAL].\n\n_________________________________________\n[SEU NOME COMPLETO]\nTelefone: [SEU TELEFONE]"
+    },
+    {
+      "id": "bairro-tapa-buraco",
+      "categoria": "Infraestrutura do Bairro",
+      "titulo": "Ofício de Solicitação de Reparo em Iluminação Pública ou Tapa-Buraco",
+      "resumo": "Modelo direto para cobrar da prefeitura a troca de lâmpadas queimadas ou conserto de ruas.",
+      "onde_entregar": "Secretaria de Obras do Município ou Central de Atendimento ao Cidadão (156)",
+      "documentos_anexos": ["Foto do problema (se possível)"],
+      "arquivo_pdf": "assets/modelos-pdf/bairro-tapa-buraco.pdf",
+      "arquivo_docx": "assets/modelos-docx/bairro-tapa-buraco.docx",
+      "texto_minuta": "AO ILUSTRÍSSIMO(A) SENHOR(A) SECRETÁRIO(A) DE OBRAS E SERVIÇOS PÚBLICOS DE [NOME DO MUNICÍPIO]\n\nAssunto: Solicitação de reparo em via pública / iluminação.\n\nEu, [SEU NOME COMPLETO], portador(a) do CPF nº [NÚMERO DO CPF], residente na [SEU ENDEREÇO COMPLETO], venho por meio desta solicitar a intervenção urgente do poder público na [NOME DA RUA E BAIRRO].\n\nO local apresenta [DESCREVER O PROBLEMA: ex: um buraco de grandes proporções na pista / postes com lâmpadas queimadas há semanas], gerando riscos à segurança e ao tráfego de pedestres e veículos.\n\nSolicito, com base no dever do Estado de zelar pelo bem-estar e segurança da população, que seja enviada uma equipe para realizar o [reparo do asfalto / troca das lâmpadas] no menor prazo possível.\n\n[NOME DO MUNICÍPIO], [DATA ATUAL].\n\n_________________________________________\n[SEU NOME COMPLETO]\nTelefone: [SEU TELEFONE]"
+    },
+    {
+      "id": "educacao-vaga-creche",
+      "categoria": "Educação e Creches",
+      "titulo": "Requerimento de Vaga em Creche ou Escola Municipal",
+      "resumo": "Para garantir o direito da criança à educação infantil quando a prefeitura alegar falta de vagas.",
+      "onde_entregar": "Secretaria Municipal de Educação ou na própria escola/creche",
+      "documentos_anexos": ["Certidão de nascimento da criança", "Comprovante de residência", "Cartão de vacinação", "RG e CPF dos pais"],
+      "arquivo_pdf": "assets/modelos-pdf/educacao-vaga-creche.pdf",
+      "arquivo_docx": "assets/modelos-docx/educacao-vaga-creche.docx",
+      "texto_minuta": "AO ILUSTRÍSSIMO(A) SENHOR(A) SECRETÁRIO(A) DE EDUCAÇÃO DO MUNICÍPIO DE [NOME DO MUNICÍPIO]\n\nAssunto: Requerimento de matrícula em creche/escola municipal.\n\nEu, [SEU NOME COMPLETO], CPF nº [NÚMERO DO CPF], responsável legal pela criança [NOME DA CRIANÇA], nascida em [DATA DE NASCIMENTO], venho requerer a matrícula imediata da mesma na Creche/Escola Municipal [NOME DA INSTITUIÇÃO, SE SOUBER].\n\nJá realizei a inscrição no cadastro municipal no dia [DATA DA INSCRIÇÃO] (protocolo nº [NÚMERO DO PROTOCOLO]), porém até o presente momento não obtive retorno sobre a vaga.\n\nRessalto que a educação é um direito social garantido pelo Art. 6º e Art. 205 da Constituição Federal, e o Estatuto da Criança e do Adolescente (ECA) assegura o atendimento em creche e pré-escola às crianças de zero a cinco anos de idade (Art. 54, inciso IV).\n\nDiante do exposto, solicito providências urgentes para a efetivação da vaga.\n\n[NOME DO MUNICÍPIO], [DATA ATUAL].\n\n_________________________________________\n[SEU NOME COMPLETO]\nTelefone: [SEU TELEFONE]"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+/* ================================================================
+   VARIÁVEIS — O DNA VISUAL DO AJUDA CIDADÃO
+   
+   O que faz: Define as cores, fontes e espaçamentos de todo o site.
+   Depende de: Nada (é a base de tudo).
+   Mexe em: É importado pelo base.css e lido por todos os outros CSS.
+   ================================================================ */
+
+:root {
+  /* Cores Principais - Azul transmite confiança e ajuda */
+  --cor-primaria: #2563eb;       /* Azul principal (botões, links) */
+  --cor-primaria-escura: #1d4ed8; /* Azul para hover */
+  --cor-primaria-clara: #eff6ff;  /* Azul bem clarinho para fundos */
+
+  /* Cores de Texto e Fundo */
+  --cor-texto: #1e293b;          /* Cinza escuro (quase preto) para leitura */
+  --cor-texto-leve: #64748b;     /* Cinza médio para resumos e legendas */
+  --cor-fundo: #f8fafc;          /* Fundo do site (cinza muito claro) */
+  --cor-fundo-caixa: #ffffff;    /* Fundo de cards e caixas */
+
+  /* Cores de Apoio */
+  --cor-borda: #e2e8f0;
+  --cor-sucesso: #16a34a;        /* Verde para "Copiado!" */
+  --cor-alerta: #ea580c;         /* Laranja para avisos */
+
+  /* Tipografia - Fontes do sistema para carregar rápido em 3G */
+  --fonte-base: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  /* Espaçamentos */
+  --espaco-pequeno: 0.5rem;
+  --espaco-medio: 1rem;
+  --espaco-grande: 2rem;
+
+  /* Bordas */
+  --borda-arredondada: 8px;
+}
+
+/* Modo de Alto Contraste (Ativado pelo JS) */
+body.alto-contraste {
+  --cor-primaria: #ffff00; /* Amarelo para links e botões */
+  --cor-primaria-escura: #ffff00;
+  --cor-primaria-clara: #333333;
+  --cor-texto: #ffffff;
+  --cor-texto-leve: #dddddd;
+  --cor-fundo: #000000;
+  --cor-fundo-caixa: #111111;
+  --cor-borda: #555555;
+}
+
+body.alto-contraste .cabecalho {
+  border-bottom: 2px solid #ffff00;
+}
+
+body.alto-contraste .card {
+  border: 1px solid #ffff00;
+}
