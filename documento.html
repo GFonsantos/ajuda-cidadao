@@ -31,17 +31,17 @@
         </div>
     </header>
 
-    <main class="container no-print">
-        <a href="biblioteca.html" class="btn-voltar">&larr; Voltar para a Biblioteca</a>
+    <main class="container">
+        <a href="biblioteca.html" class="btn-voltar no-print">&larr; Voltar para a Biblioteca</a>
         
-        <div class="cabecalho-documento">
+        <div class="cabecalho-documento no-print">
             <h1 id="titulo-documento">Carregando...</h1>
             <p id="resumo-documento" class="resumo-doc"></p>
         </div>
 
         <div class="layout-documento">
             <!-- COLUNA 1: O FORMULÁRIO -->
-            <section class="area-formulario">
+            <section class="area-formulario no-print">
                 <h2>1. Preencha seus dados</h2>
                 <p class="aviso-privacidade">🔒 Seus dados não são salvos. Eles ficam apenas no seu aparelho e desaparecem ao fechar a página.</p>
                 <form id="formulario-dinamico">
@@ -51,8 +51,8 @@
 
             <!-- COLUNA 2: O DOCUMENTO (PRÉ-VISUALIZAÇÃO E IMPRESSÃO) -->
             <section class="area-documento">
-                <h2>2. Confira e imprima</h2>
-                <div class="acoes-documento">
+                <h2 class="no-print">2. Confira e imprima</h2>
+                <div class="acoes-documento no-print">
                     <button type="button" class="btn-imprimir" onclick="window.print()">
                         🖨️ Imprimir / Salvar em PDF
                     </button>

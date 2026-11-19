@@ -42,7 +42,51 @@
       "documentos_anexos": ["Certidão de nascimento da criança", "Comprovante de residência", "Cartão de vacinação", "RG e CPF dos pais"],
       "arquivo_pdf": "assets/modelos-pdf/educacao-vaga-creche.pdf",
       "arquivo_docx": "assets/modelos-docx/educacao-vaga-creche.docx",
-      "texto_minuta": "AO ILUSTRÍSSIMO(A) SENHOR(A) SECRETÁRIO(A) DE EDUCAÇÃO DO MUNICÍPIO DE [NOME DO MUNICÍPIO]\n\nAssunto: Requerimento de matrícula em creche/escola municipal.\n\nEu, [SEU NOME COMPLETO], CPF nº [NÚMERO DO CPF], responsável legal pela criança [NOME DA CRIANÇA], nascida em [DATA DE NASCIMENTO], venho requerer a matrícula imediata da mesma na Creche/Escola Municipal [NOME DA INSTITUIÇÃO, SE SOUBER].\n\nJá realizei a inscrição no cadastro municipal no dia [DATA DA INSCRIÇÃO] (protocolo nº [NÚMERO DO PROTOCOLO]), porém até o presente momento não obtive retorno sobre a vaga.\n\nRessalto que a educação é um direito social garantido pelo Art. 6º e Art. 205 da Constituição Federal, e o Estatuto da Criança e do Adolescente (ECA) assegura o atendimento em creche e pré-escola às crianças de zero a cinco anos de idade (Art. 54, inciso IV).\n\nDiante do exposto, solicito providências urgentes para a efetivação da vaga.\n\n[NOME DO MUNICÍPIO], [DATA ATUAL].\n\n_________________________________________\n[SEU NOME COMPLETO]\nTelefone: [SEU TELEFONE]"
+      "texto_minuta": "AO ILUSTRÍSSIMO(A) SENHOR(A) SECRETÁRIO(A) DE EDUCAÇÃO DO MUNICÍPIO DE [NOME DO MUNICÍPIO]\n\nAssunto: Requerimento de matrícula em creche/escola municipal.\n\nEu, [SEU NOME COMPLETO], CPF nº [NÚMERO DO CPF], responsável legal pela criança [NOME DA CRIANÇA], nascida em [DATA DE NASCIMENTO DA CRIANÇA], venho requerer a matrícula imediata da mesma na Creche/Escola Municipal [NOME DA INSTITUIÇÃO, SE SOUBER].\n\nJá realizei a inscrição no cadastro municipal no dia [DATA DA INSCRIÇÃO] (protocolo nº [NÚMERO DO PROTOCOLO]), porém até o presente momento não obtive retorno sobre a vaga.\n\nRessalto que a educação é um direito social garantido pelo Art. 6º e Art. 205 da Constituição Federal, e o Estatuto da Criança e do Adolescente (ECA) assegura o atendimento em creche e pré-escola às crianças de zero a cinco anos de idade (Art. 54, inciso IV).\n\nDiante do exposto, solicito providências urgentes para a efetivação da vaga.\n\n[NOME DO MUNICÍPIO], [DATA ATUAL].\n\n_________________________________________\n[SEU NOME COMPLETO]\nTelefone: [SEU TELEFONE]"
+    },
+    {
+      "id": "habitacao-isencao-iptu",
+      "categoria": "Habitação e Isenções",
+      "titulo": "Pedido de Isenção de IPTU para Aposentados",
+      "resumo": "Modelo para solicitar isenção do imposto predial se você for aposentado e possuir apenas um imóvel.",
+      "onde_entregar": "Secretaria Municipal de Fazenda ou Finanças",
+      "documentos_anexos": ["Escritura ou matrícula do imóvel", "Comprovante de aposentadoria (INSS)", "RG e CPF", "Comprovante de residência"],
+      "arquivo_pdf": "assets/modelos-pdf/habitacao-isencao-iptu.pdf",
+      "arquivo_docx": "assets/modelos-docx/habitacao-isencao-iptu.docx",
+      "texto_minuta": "AO ILUSTRÍSSIMO(A) SENHOR(A) SECRETÁRIO(A) DE FAZENDA DO MUNICÍPIO DE [NOME DO MUNICÍPIO]\n\nAssunto: Requerimento de isenção de IPTU para aposentado(a).\n\nEu, [SEU NOME COMPLETO], portador(a) do RG nº [NÚMERO DO RG], inscrito(a) no CPF sob o nº [NÚMERO DO CPF], nascido(a) em [DATA DE NASCIMENTO], venho, respeitosamente, requerer a isenção do Imposto Predial e Territorial Urbano (IPTU) referente ao imóvel localizado na [ENDEREÇO COMPLETO DO IMÓVEL], inscrição imobiliária nº [NÚMERO DA MATRÍCULA DO IMÓVEL].\n\nSou aposentado(a) e este é o meu único imóvel, utilizado exclusivamente para minha moradia, conforme comprovam os documentos em anexo.\n\nFundamento o presente pedido na Lei Orgânica do Município e no Estatuto do Idoso (Lei Federal nº 10.741/2003), que garantem a proteção e a prioridade no atendimento a pessoas com mais de 60 anos.\n\nSolicito a análise do pedido e a devida atualização do cadastro imobiliário.\n\n[NOME DO MUNICÍPIO], [DATA ATUAL].\n\n_________________________________________\n[SEU NOME COMPLETO]\nTelefone: [SEU TELEFONE]"
+    },
+    {
+      "id": "habitation-contrato-locacao",
+      "categoria": "Habitação e Isenções",
+      "titulo": "Contrato de Locação Residencial Simplificado",
+      "resumo": "Contrato padrão para aluguel de casa ou apartamento, com cláusulas essenciais para locador e locatário.",
+      "onde_entregar": "Uso pessoal (não é para protocolar em órgão público, mas para assinatura entre as partes)",
+      "documentos_anexos": ["RG e CPF de ambas as partes", "Comprovante de renda do locatário"],
+      "arquivo_pdf": "assets/modelos-pdf/habitacao-contrato-locacao.pdf",
+      "arquivo_docx": "assets/modelos-docx/habitacao-contrato-locacao.docx",
+      "texto_minuta": "CONTRATO DE LOCAÇÃO RESIDENCIAL\n\nLOCADOR(A): [NOME COMPLETO DO LOCADOR], nacionalidade [NACIONALIDADE DO LOCADOR], estado civil [ESTADO CIVIL DO LOCADOR], profissão [PROFISSAO DO LOCADOR], portador do RG nº [RG DO LOCADOR] e CPF nº [CPF DO LOCADOR], residente em [ENDEREÇO DO LOCADOR].\n\nLOCATÁRIO(A): [NOME COMPLETO DO LOCATÁRIO], nacionalidade [NACIONALIDADE DO LOCATÁRIO], estado civil [ESTADO CIVIL DO LOCATÁRIO], profissão [PROFISSAO DO LOCATÁRIO], portador do RG nº [RG DO LOCATÁRIO] e CPF nº [CPF DO LOCATÁRIO], residente em [ENDEREÇO DO LOCATÁRIO].\n\nAs partes acima identificadas têm entre si justo e acertado o presente Contrato de Locação Residencial, que se regerá pelas cláusulas seguintes e pelas condições descritas no presente.\n\nCLÁUSULA PRIMEIRA - DO OBJETO\nO presente contrato tem como objeto o imóvel situado em [ENDEREÇO COMPLETO DO IMÓVEL ALUGADO], que se destina exclusivamente à residência do LOCATÁRIO e sua família.\n\nCLÁUSULA SEGUNDA - DO PRAZO\nO prazo de locação é de [PRAZO EM MESES] meses, iniciando-se em [DATA DE INÍCIO] e terminando em [DATA DE TÉRMINO], independentemente de aviso ou notificação.\n\nCLÁUSULA TERCEIRA - DO ALUGUEL E FORMA DE PAGAMENTO\nO aluguel mensal é de R$ [VALOR DO ALUGUEL], a ser pago até o dia [DIA DE VENCIMENTO] de cada mês.\n\nCLÁUSULA QUARTA - DAS OBRIGAÇÕES DO LOCATÁRIO\nO LOCATÁRIO se obriga a pagar pontualmente o aluguel e os encargos (IPTU, água, luz) e a conservar o imóvel em bom estado de limpeza e asseio.\n\nCLÁUSULA QUINTA - DA GARANTIA\nPara garantia das obrigações assumidas, o LOCATÁRIO oferece [TIPO DE GARANTIA: ex: caução de 3 meses / fiador].\n\nE, por estarem assim justos e contratados, firmam o presente instrumento em duas vias de igual teor.\n\n[NOME DO MUNICÍPIO], [DATA ATUAL].\n\n_________________________________________\n[NOME COMPLETO DO LOCADOR]\n\n_________________________________________\n[NOME COMPLETO DO LOCATÁRIO]\n\nTestemunha 1: [NOME DA TESTEMUNHA 1] - CPF: [CPF DA TESTEMUNHA 1]\nTestemunha 2: [NOME DA TESTEMUNHA 2] - CPF: [CPF DA TESTEMUNHA 2]"
+    },
+    {
+      "id": "saude-exame-negado",
+      "categoria": "Saúde Pública",
+      "titulo": "Recurso de Negativa de Exame Médico pelo Plano de Saúde",
+      "resumo": "Use quando o plano de saúde negar um exame prescrito pelo seu médico alegando carência ou falta de cobertura.",
+      "onde_entregar": "Protocolo do Plano de Saúde / Agência Nacional de Saúde (ANS)",
+      "documentos_anexos": ["Carteirinha do plano", "Pedido médico do exame", "Carta de negativa do plano"],
+      "arquivo_pdf": "assets/modelos-pdf/saude-exame-negado.pdf",
+      "arquivo_docx": "assets/modelos-docx/saude-exame-negado.docx",
+      "texto_minuta": "À [NOME DO PLANO DE SAÚDE]\n\nAssunto: Recurso administrativo contra negativa de cobertura de exame médico.\n\nEu, [SEU NOME COMPLETO], portador(a) do CPF nº [NÚMERO DO CPF], inscrito(a) no plano de saúde sob o nº [NÚMERO DO CONTRATO/CARTEIRINHA], venho requerer a autorização imediata para a realização do exame [NOME DO EXAME], solicitado pelo(a) médico(a) [NOME DO MÉDICO] (CRM [NÚMERO DO CRM]) em [DATA DA SOLICITAÇÃO].\n\nO plano negou a cobertura do procedimento no dia [DATA DA NEGATIVA], alegando o motivo [MOTIVO INFORMADO PELO PLANO: ex: carência / não consta no rol].\n\nOcorre que a negativa é abusiva, pois o exame é de extrema necessidade para o meu tratamento, e fere o disposto no Código de Defesa do Consumidor e nas diretrizes da Agência Nacional de Saúde Suplementar (ANS).\n\nDiante do exposto, solicito a revisão imediata da negativa e a autorização do exame, sob pena de buscar medidas judiciais cabíveis.\n\n[NOME DO MUNICÍPIO], [DATA ATUAL].\n\n_________________________________________\n[SEU NOME COMPLETO]\nTelefone: [SEU TELEFONE]"
+    },
+    {
+      "id": "consumidor-cancelamento-plano",
+      "categoria": "Direitos do Consumidor",
+      "titulo": "Cancelamento de Plano de Saúde ou Telefonia",
+      "resumo": "Notificação formal para cancelar serviços de assinatura sem pagar multas abusivas.",
+      "onde_entregar": "Loja física da operadora ou Ouvidoria da empresa",
+      "documentos_anexos": ["Cópia do contrato", "Faturas em aberto (se houver)", "RG e CPF"],
+      "arquivo_pdf": "assets/modelos-pdf/consumidor-cancelamento-plano.pdf",
+      "arquivo_docx": "assets/modelos-docx/consumidor-cancelamento-plano.docx",
+      "texto_minuta": "À [NOME DA EMPRESA / OPERADORA]\n\nAssunto: Notificação de rescisão contratual e cancelamento imediato de serviço.\n\nEu, [SEU NOME COMPLETO], inscrito(a) no CPF sob o nº [NÚMERO DO CPF], contrato nº [NÚMERO DO CONTRATO], venho por meio desta notificar formalmente o meu desejo de cancelar o serviço de [TIPO DE SERVIÇO: ex: plano de saúde / internet], a partir da data de hoje.\n\nO cancelamento é um direito meu, conforme o Art. 51 do Código de Defesa do Consumidor, que veda cláusulas que imponham multas ou obriguem o consumidor a permanecer no contrato.\n\nSolicito que a empresa envie em até 5 (cinco) dias úteis o comprovante de cancelamento e a confirmação de que não haverá cobranças futuras.\n\nCaso haja insistência na cobrança ou negativa do cancelamento, tomarei as providências cabíveis junto ao Procon e à ANS/Anatel.\n\n[NOME DO MUNICÍPIO], [DATA ATUAL].\n\n_________________________________________\n[SEU NOME COMPLETO]\nTelefone: [SEU TELEFONE]"
     }
   ]
 }

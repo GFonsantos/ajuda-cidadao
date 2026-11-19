@@ -142,11 +142,15 @@
     display: none !important;
   }
 
-  /* Zera as margens do site */
+  /* Zera as margens do site e desfaz o grid de duas colunas */
   body, main, .container {
     margin: 0 !important;
     padding: 0 !important;
     background: white !important;
+  }
+
+  .layout-documento {
+    display: block !important; /* Desfaz o grid para o papel ocupar a tela toda */
   }
 
   /* Configura a folha A4 para impressão real */
