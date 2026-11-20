@@ -1,0 +1,294 @@
+================================================================================
+                     ALFA DO PROJETO AJUDA CIDADÃO
+                Documento-mestre de continuidade do projeto
+                      Versão 1.0 — Fase Fundação Concluída
+                   Fonsantos Tecnologia — 2026
+================================================================================
+
+
+--------------------------------------------------------------------------------
+0. COMO USAR ESTE DOCUMENTO (leia primeiro)
+--------------------------------------------------------------------------------
+
+Este é o documento de continuidade do projeto Ajuda Cidadão. Foi escrito para 
+que o desenvolvimento possa ser retomado por qualquer pessoa ou assistente, sem 
+depender da conversa que o produziu.
+
+SE VOCÊ É UM ASSISTENTE DE IA ASSUMINDO O PROJETO:
+  a) Leia as seções 1, 4, 5, 6 e 7 ANTES de escrever qualquer linha de código;
+  b) O dono do projeto trabalha com código, mas prefere que o assistente 
+     entregue os blocos prontos para copiar-colar (evitando tutoriais longos de JS);
+  c) Siga as REGRAS DA CASA (seção 7) — elas foram pactuadas com o dono;
+  d) Neste projeto, a assistente é chamada de "Lu" (Lumina);
+  e) Idioma: TUDO em português do Brasil (interface, comentários e textos jurídicos).
+
+SE VOCÊ É O DONO (olá, futuro você):
+  - Atualize este Alfa a cada marco importante (mude a versão e anote no 
+    HISTÓRICO DE MARCOS, seção 12);
+  - Ao trocar de chat/assistente, cole este documento inteiro na primeira 
+    mensagem.
+
+
+--------------------------------------------------------------------------------
+1. A ALMA DO PROJETO
+--------------------------------------------------------------------------------
+
+NOME: Ajuda Cidadão.
+PROPÓSITO: Biblioteca aberta de modelos, minutas e orientação em linguagem simples.
+
+O QUE É: um projeto acadêmico de extensão universitária focado em inclusão 
+digital e acesso à justiça. O site permite que qualquer cidadão, mesmo leigo 
+juridicamente, encontre, preencha e imprima documentos formais (requerimentos, 
+ofícios, contestações) sem intermediários e sem "juridiquês".
+
+PRINCÍPIOS INEGOCIÁVEIS:
+  1. PRIVACY-BY-DESIGN — Zero banco de dados, zero login, zero coleta de dados. 
+     Os dados preenchidos pelo usuário NUNCA saem do aparelho dele (client-side).
+  2. LINGUAGEM SIMPLES — Foco no cidadão vulnerável. O site explica "para que 
+     serve", "quem tem direito" e "onde entregar" antes de mostrar o documento.
+  3. ARQUITETURA LEVE (Jamstack) — HTML, CSS puro, JS Vanilla e um arquivo JSON 
+     estático. Carregamento ultrarrápido em 3G e hospedagem gratuita (GitHub Pages).
+  4. ACESSIBILIDADE UNIVERSAL — Botões A+/A-, Alto Contraste, navegação por 
+     teclado e compatibilidade com leitores de tela (WCAG 2.1).
+  5. ESCALABILIDADE — O site foi desenhado para crescer. Adicionar novos 
+     documentos no futuro não exige programar novas telas, apenas alimentar o JSON.
+
+VISÃO DE FUTURO: Tornar-se um site de uso real e usual na sociedade, 
+especialmente para Pequenas Causas (Juizados Especiais).
+
+
+--------------------------------------------------------------------------------
+2. HISTÓRICO DE EVOLUÇÃO (de onde viemos)
+--------------------------------------------------------------------------------
+
+FASE 1 — ESTRUTURA: Criação das 5 páginas base (Home, Biblioteca, Documento, 
+  Guia, Sobre). Separação atômica de CSS e JS (regra de arquivos granulares).
+FASE 2 — O MOTOR: Implementação do formulário dinâmico. O JS lê os campos 
+  [ENTRE COLCHETES] do JSON e constrói os inputs automaticamente. 
+FASE 3 — UX E MÁSCARAS: Implementação de máscaras em tempo real (CPF, CNPJ, 
+  Data, Telefone, CEP) e formatação de caixa alta para nomes e documentos.
+FASE 4 — IMPRESSÃO: Criação da regra @media print que esconde o site e 
+  formata o documento como uma folha A4 real, pronto para salvar em PDF ou papel.
+FASE 5 — REFINAMENTO VISUAL: Inclusão de animações de scroll (Intersection 
+  Observer), Mega Menu dropdown, logo própria e ajustes de design (cards).
+ESTADO ATUAL: A fundação está 100% operacional e validada (commitado no GitHub).
+
+
+--------------------------------------------------------------------------------
+3. IDENTIDADE VISUAL
+--------------------------------------------------------------------------------
+
+CORES (tokens em css/variaveis.css):
+  --cor-primaria: #2563eb (Azul confiança — botões e links)
+  --cor-primaria-escura: #1d4ed8
+  --cor-fundo: #f8fafc (Cinza muito claro)
+  --cor-fundo-caixa: #ffffff (Cards e formulários)
+  --cor-texto: #1e293b (Cinza escuro para leitura)
+  --cor-texto-leve: #64748b (Cinza médio para resumos)
+
+TIPOGRAFIA: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto. 
+  (Fontes nativas do sistema para carregar instantaneamente sem internet).
+
+ESTILOS ESPECÍFICOS:
+  - Header com efeito de vidro (backdrop-filter: blur).
+  - Menu em formato de "pílulas" arredondadas.
+  - Mega Menu full-width acionado pelo botão "Categorias".
+  - Cards com efeito hover de elevação.
+  - Cores de destaque por categoria (Saúde=Verde, Consumidor=Laranja, Bairro=Azul).
+
+ACESSIBILIDADE (app.js):
+  - Botões A+/A- salvam a preferência no localStorage.
+  - Modo Alto Contraste (fundo preto, texto amarelo/branco).
+  - Classe .sr-only esconde textos visualmente mas mantém para leitores de tela.
+
+
+--------------------------------------------------------------------------------
+4. ARQUITETURA DE ARQUIVOS
+--------------------------------------------------------------------------------
+
+ESTRUTURA ATUAL:
+  ajuda-cidadao/
+  ├── index.html                 Home (Busca, Categorias, Ajuda)
+  ├── biblioteca.html            Catálogo (Filtros e lista de minutas)
+  ├── documento.html             Formulário dinâmico + Impressão A4
+  ├── guia-protocolo.html        Instruções passo a passo
+  ├── sobre.html                 Privacidade e Base Legal
+  ├── Alfa.txt                   Este documento
+  ├── README.md                  Documentação para o GitHub
+  │
+  ├── css/
+  │   ├── variaveis.css          Tokens de design e Alto Contraste
+  │   ├── base.css               Reset, tipografia e .sr-only
+  │   ├── layout.css             Header, Footer, Container
+  │   ├── componentes.css        Botões, cards, Mega Menu
+  │   ├── home.css               Estilos da Home + animações
+  │   ├── biblioteca.css         Estilos do Catálogo
+  │   ├── documento.css          Grid de 2 colunas + @media print
+  │   └── guia-sobre.css         Estilos textuais
+  │
+  ├── js/
+  │   ├── app.js                 Acessibilidade (A+, A-, Contraste)
+  │   ├── menu.js                Controle do Mega Menu e link ativo
+  │   ├── home.js                Redirecionamento da busca
+  │   ├── biblioteca.js          Filtro e renderização do JSON
+  │   ├── mascaras.js            Formatação de inputs (CPF, tel, etc.)
+  │   ├── documento.js           Motor que injeta o form e substitui dados
+  │   └── animacoes.js           Scroll Reveal (Intersection Observer)
+  │
+  ├── data/
+  │   └── acervo-minutas.json    Banco de dados estático
+  │
+  └── assets/
+      ├── icons/                 Logo e ícones SVG
+      └── modelos-pdf/           (Reservado para PDFs estáticos)
+
+
+--------------------------------------------------------------------------------
+5. MODELO DE DADOS (acervo-minutas.json)
+--------------------------------------------------------------------------------
+
+O arquivo JSON é o cérebro do conteúdo. Cada objeto "minuta" contém:
+  - id: identificador único para a URL (ex: saude-medicamento-sus)
+  - categoria: nome exato da categoria (usado nos filtros)
+  - titulo: título do documento
+  - resumo: explicação curta em linguagem simples
+  - onde_entregar: local físico ou digital para protocolar
+  - documentos_anexos: array de strings com documentos necessários
+  - texto_minuta: O texto jurídico completo. Os campos a serem preenchidos
+    DEVEM estar entre colchetes, ex: [SEU NOME COMPLETO].
+
+REGRA DE OURO DO MOTOR: Qualquer texto entre colchetes no JSON será 
+automaticamente transformado em um input no formulário (documento.js).
+
+
+--------------------------------------------------------------------------------
+6. FLUXOS VITAIS (Como a mágica acontece)
+--------------------------------------------------------------------------------
+
+FLUXO DE BUSCA E CATÁLOGO:
+  O usuário digita na Home -> home.js redireciona para biblioteca.html?q=termo.
+  biblioteca.js faz fetch() no JSON, filtra os dados (incluindo o termo da URL)
+  e renderiza os cards na tela.
+
+FLUXO DE PREENCHIMENTO (documento.html):
+  1. documento.js lê o ID na URL (?id=...).
+  2. Busca no JSON e joga o texto no lado direito da tela.
+  3. Usa Regex /\[(.*?)\]/g para encontrar os colchetes.
+  4. Cria um input para cada colchete único encontrado.
+  5. Ao digitar, o script varre o texto novamente e substitui os colchetes
+     pelo que foi digitado (atualização em tempo real).
+
+FLUXO DE MÁSCARAS (mascaras.js):
+  O documento.js verifica o nome do campo. Se tiver "CPF", aplica máscara de CPF. 
+  Se tiver "NOME", aplica caixa alta. Se tiver "ENDEREÇO", aplica Title Case.
+
+FLUXO DE IMPRESSÃO:
+  A classe .folha-a4 tem as medidas de uma folha. No CSS @media print, o site 
+  esconde tudo com a classe .no-print (header, botões, formulário) e transforma 
+  o layout em uma via única, deixando apenas o texto do documento visível.
+
+
+--------------------------------------------------------------------------------
+7. REGRAS DA CASA (pactuadas com o dono — não quebre)
+--------------------------------------------------------------------------------
+
+  R1. Separação Total: Cada página tem seu CSS e JS próprio. Não misture regras 
+      de home.css com documento.css.
+  R2. Formato de Entrega: O assistente deve entregar blocos completos de código 
+      (copiar-colar) para arquivos novos, ou usar "Procure por X / Substitua por Y" 
+      para ajustes em arquivos existentes.
+  R3. Documentação: Todo arquivo novo deve ter o cabeçalho em bloco de comentário 
+      explicando (O que faz / Depende de / Mexe em).
+  R4. Zero Coleta: NUNCA adicione scripts de analytics, cookies de rastreamento 
+      ou APIs que enviem dados do formulário para fora.
+  R5. Acessibilidade: Todo elemento interativo novo precisa de aria-label, foco 
+      visível e contraste adequado.
+  R6. Visual: Não usar emojis na interface (exceto onde já foi pactuado). Prezar 
+      por ícones, cards limpos e tipografia nativa.
+  R7. Organização: Manter as pastas e a arquitetura de arquivos conforme a seção 4.
+
+
+--------------------------------------------------------------------------------
+8. DECISÕES DE ENGENHARIA E SEUS PORQUÊS
+--------------------------------------------------------------------------------
+
+  D1. Por que sem Banco de Dados? Para garantir privacidade total (LGPD) e 
+      custo zero de hospedagem. O formulário roda no navegador.
+  D2. Por que gerar o formulário dinamicamente? Para escalar. Se o usuário 
+      adicionar 50 minutas no JSON, o código JavaScript já cria os formulários 
+      de todas elas sem precisar escrever 50 HTMLs diferentes.
+  D3. Por que impressão via CSS @media print? O usuário não precisa de Word ou 
+      Adobe. Ele preenche no celular e salva como PDF direto pelo navegador.
+  D4. Por que o arquivo de máscaras é separado? Para que o motor de formulário 
+      fique limpo e as regras de formatação fiquem centralizadas num só lugar.
+  D5. Por que system-ui como fonte? Para o site carregar instantaneamente em 
+      conexões 3G ou em computadores antigos da faculdade, sem depender do 
+      Google Fonts.
+
+
+--------------------------------------------------------------------------------
+9. DÍVIDAS TÉCNICAS E ARMADILHAS CONHECIDAS
+--------------------------------------------------------------------------------
+
+  - CORS: A página documento.html usa fetch() para ler o JSON. Abrir o HTML 
+    com duplo clique NÃO FUNCIONA. Precisa do Live Server (localhost) ou 
+    de um servidor estático (GitHub Pages).
+  - Cache: Se as alterações de CSS/JS não aparecerem, usar Ctrl+Shift+R no 
+    navegador para limpar o cache.
+  - Backspace em inputs com máscara: Editar o meio de um CPF pode fazer o 
+    cursor pular para o final. (Funcional, mas pode ser refinado no futuro).
+  - Acervo Inicial: O JSON tem 8 minutas. Ainda faltam documentos de Pequenas 
+    Causas (Ação de Cobrança, Dano Moral, etc.) e contratos.
+
+
+--------------------------------------------------------------------------------
+10. ROTEIRO FUTURO (roadmap acordado)
+--------------------------------------------------------------------------------
+
+  PRÓXIMOS (na ordem):
+  1. Adicionar a categoria e as minutas de PEQUENAS CAUSAS.
+  2. Testar o layout mobile em aparelhos reais (iPhone e Android).
+  3. Publicar no GitHub Pages.
+  4. Criar o roteiro de apresentação para a banca (destacar LGPD, Acessibilidade 
+     e a facilidade do preenchimento).
+
+  EM ESPERA:
+  - Geração nativa de PDF sem a janela de impressão (usando biblioteca jsPDF).
+  - Modo Offline (PWA) para funcionar sem internet no celular.
+
+
+--------------------------------------------------------------------------------
+11. RITUAIS DE TESTE (executar antes de qualquer apresentação)
+--------------------------------------------------------------------------------
+
+  TESTE DE MÁSCARA E IMPRESSÃO:
+    Abrir Contrato de Locação -> Digitar CPF -> Ver se formata -> Imprimir -> 
+    Verificar se a folha A4 sai apenas com o contrato e os dados preenchidos.
+
+  TESTE DE ACESSIBILIDADE:
+    Clicar em A+ e A- e verificar se o tamanho muda e persiste. 
+    Ligar o Alto Contraste e verificar se as cores se invertem para preto/amarelo.
+    Navegar usando apenas a tecla TAB.
+
+  TESTE DE CATÁLOGO:
+    Ir na Biblioteca -> Filtrar por "Saúde" -> Usar a busca por "remédio" -> 
+    Voltar para a Home e clicar no atalho "Falta de remédio".
+
+
+--------------------------------------------------------------------------------
+12. HISTÓRICO DE MARCOS (atualizar a cada versão)
+--------------------------------------------------------------------------------
+
+  v1.0 — A FUNDAÇÃO (este marco):
+     · 5 páginas construídas e linkadas.
+     · Motor dinâmico de formulário operante (Regex de colchetes).
+     · Máscaras (CPF, CNPJ, Data, CEP, Telefone) e Caixa Alta.
+     · Impressão A4 limpa (@media print).
+     · Mega Menu responsivo e animações de scroll.
+     · Acervo inicial de 8 documentos reais no JSON.
+     · Deploy do código versionado no GitHub (repositório GFonsantos/ajuda-cidadao).
+
+================================================================================
+                        FIM DO ALFA — v1.0
+     "A lei é para todos. E o documento também." — alma do Ajuda Cidadão
+================================================================================

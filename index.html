@@ -15,23 +15,55 @@
 <body>
 
     <!-- CABEÇALHO PADRÃO -->
-    <header class="cabecalho">
+    <header class="cabecalho no-print">
         <div class="cabecalho-conteudo">
             <a href="index.html" class="logo" aria-label="Página inicial do Ajuda Cidadão">
                 <img src="assets/icons/logo.jpg" alt="Ajuda Cidadão" class="logo-img">
             </a>
             
             <nav class="menu-principal" aria-label="Navegação principal">
-                <a href="index.html">Início</a>
-                <a href="biblioteca.html">Biblioteca</a>
-                <a href="guia-protocolo.html">Como Protocolar</a>
-                <a href="sobre.html">Privacidade</a>
+                <!-- O JS vai adicionar a classe 'ativo' automaticamente -->
+                <a href="index.html" class="menu-link">Início</a>
+                <a href="biblioteca.html" class="menu-link">Biblioteca</a>
+                
+                <button class="menu-mega-btn" aria-haspopup="true" aria-expanded="false">
+                    Categorias <span class="seta">▾</span>
+                </button>
+                
+                <a href="guia-protocolo.html" class="menu-link">Como Protocolar</a>
+                <a href="sobre.html" class="menu-link">Privacidade</a>
             </nav>
 
             <div class="barra-acessibilidade" aria-label="Controles de acessibilidade">
                 <button id="btn-aumentar-fonte" title="Aumentar fonte">A+</button>
                 <button id="btn-diminuir-fonte" title="Diminuir fonte">A-</button>
-                <button id="btn-alto-contraste" title="Alternar alto contraste">Alto Contraste</button>
+                <button id="btn-alto-contraste" title="Alternar alto contraste">🌓</button>
+            </div>
+        </div>
+
+        <!-- MEGA MENU (Full-Width) -->
+        <div class="mega-menu" id="mega-menu">
+            <div class="mega-menu-conteudo">
+                <div class="mega-coluna">
+                    <h3><a href="biblioteca.html?cat=saude">Saúde Pública</a></h3>
+                    <p>Medicamentos, consultas e direitos no SUS.</p>
+                </div>
+                <div class="mega-coluna">
+                    <h3><a href="biblioteca.html?cat=consumidor">Direitos do Consumidor</a></h3>
+                    <p>Cobranças abusivas, cancelamentos e defeitos.</p>
+                </div>
+                <div class="mega-coluna">
+                    <h3><a href="biblioteca.html?cat=bairro">Infraestrutura do Bairro</a></h3>
+                    <p>Buracos na rua, iluminação e saneamento.</p>
+                </div>
+                <div class="mega-coluna">
+                    <h3><a href="biblioteca.html?cat=educacao">Educação e Creches</a></h3>
+                    <p>Vagas em creches e escolas municipais.</p>
+                </div>
+                <div class="mega-coluna">
+                    <h3><a href="biblioteca.html?cat=habitacao">Habitação e Isenções</a></h3>
+                    <p>Isenção de IPTU, contratos e direitos.</p>
+                </div>
             </div>
         </div>
     </header>
@@ -48,22 +80,48 @@
                 <input type="text" id="campo-busca" placeholder="Ex: falta de remédio, buraco na rua, conta de luz...">
                 <button type="button" aria-label="Buscar">Buscar</button>
             </div>
+            
+            <div class="selo-privacidade">
+                🔒 <strong>Ambiente 100% Seguro:</strong> Nós não salvamos seus dados. Tudo fica no seu aparelho.
+            </div>
+        </section>
+
+        <!-- SEÇÃO COMO FUNCIONA -->
+        <section class="como-funciona">
+            <h2 class="secao-titulo">Como o Ajuda Cidadão funciona?</h2>
+            <div class="grid-passos">
+                <div class="passo">
+                    <div class="passo-icone">1</div>
+                    <h3>Encontre o modelo</h3>
+                    <p>Busque pelo seu problema ou navegue pelas categorias.</p>
+                </div>
+                <div class="passo">
+                    <div class="passo-icone">2</div>
+                    <h3>Preencha no site</h3>
+                    <p>Nós montamos o documento oficial para você em tempo real.</p>
+                </div>
+                <div class="passo">
+                    <div class="passo-icone">3</div>
+                    <h3>Imprima e protocole</h3>
+                    <p>Leve ao órgão responsável e exija o carimbo de protocolo.</p>
+                </div>
+            </div>
         </section>
 
         <!-- SEÇÃO DE CATEGORIAS -->
         <h2 class="secao-titulo">Navegue por Categoria</h2>
         <section class="grid-categorias">
-            <a href="biblioteca.html?cat=saude" class="card">
+            <a href="biblioteca.html?cat=saude" class="card card-saude">
                 <h3>Saúde Pública</h3>
                 <p>Medicamentos, consultas e direitos no SUS.</p>
                 <span class="btn-card">Ver Modelos</span>
             </a>
-            <a href="biblioteca.html?cat=consumidor" class="card">
+            <a href="biblioteca.html?cat=consumidor" class="card card-consumidor">
                 <h3>Direitos do Consumidor</h3>
                 <p>Cobranças abusivas, cancelamentos e defeitos.</p>
                 <span class="btn-card">Ver Modelos</span>
             </a>
-            <a href="biblioteca.html?cat=bairro" class="card">
+            <a href="biblioteca.html?cat=bairro" class="card card-bairro">
                 <h3>Infraestrutura do Bairro</h3>
                 <p>Buracos na rua, iluminação e saneamento.</p>
                 <span class="btn-card">Ver Modelos</span>
@@ -90,6 +148,25 @@
             </a>
         </section>
 
+        <!-- SEÇÃO DE AJUDA ADICIONAL -->
+        <section class="ajuda-adicional">
+            <h2>Não encontrou o que precisa?</h2>
+            <p>Se o seu problema não está na lista, esses canais podem te ajudar diretamente:</p>
+            <div class="grid-contatos">
+                <div class="contato-card">
+                    <strong>Defensoria Pública</strong>
+                    <p>Ajuda jurídica gratuita para quem não pode pagar advogado.</p>
+                </div>
+                <div class="contato-card">
+                    <strong>Procon</strong>
+                    <p>Para problemas com empresas, lojas e cobranças abusivas.</p>
+                </div>
+                <div class="contato-card">
+                    <strong>Disque 100</strong>
+                    <p>Denúncias de violações de direitos humanos.</p>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- RODAPÉ PADRÃO -->
@@ -100,7 +177,9 @@
 
     <!-- JS -->
     <script src="js/app.js"></script>
+    <script src="js/menu.js"></script>
     <script src="js/home.js"></script>
+    <script src="js/animacoes.js"></script>
 </body>
 </body>
 </html>

@@ -29,9 +29,15 @@
 }
 
 .secao-titulo {
-  text-align: center;
-  margin: var(--espaco-grande) 0 var(--espaco-medio) 0;
+  text-align: left;
+  /* Adiciona o max-width e o margin auto para alinhar com os cards */
+  max-width: 1200px;
+  margin: var(--espaco-grande) auto var(--espaco-medio) auto;
+  /* Adiciona o padding lateral para o texto não colar na borda no celular */
+  padding: 0 var(--espaco-medio) var(--espaco-pequeno) var(--espaco-medio);
   font-size: 1.5rem;
+  border-bottom: 2px solid var(--cor-borda);
+  color: var(--cor-texto);
 }
 
 /* Grades de Categorias e Atalhos */
@@ -48,3 +54,134 @@
   .grid-categorias { grid-template-columns: repeat(3, 1fr); }
   .grid-atalhos { grid-template-columns: repeat(3, 1fr); }
 }
+
+/* ================================================================
+   NOVAS SEÇÕES DA HOME (Privacidade, Como Funciona, Ajuda)
+   ================================================================ */
+
+/* Selo de Privacidade no Hero */
+.selo-privacidade {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  margin-top: var(--espaco-medio);
+  backdrop-filter: blur(4px);
+}
+
+/* Seção Como Funciona */
+.como-funciona {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--espaco-grande) var(--espaco-medio);
+}
+
+.grid-passos {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--espaco-medio);
+  margin-top: var(--espaco-medio);
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .grid-passos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.passo {
+  background-color: var(--cor-fundo-caixa);
+  padding: var(--espaco-grande) var(--espaco-medio);
+  border-radius: var(--borda-arredondada);
+  border: 1px solid var(--cor-borda);
+}
+
+.passo-icone {
+  width: 50px;
+  height: 50px;
+  background-color: var(--cor-primaria);
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin: 0 auto var(--espaco-medio) auto;
+}
+
+.passo h3 {
+  font-size: 1.125rem;
+  margin-bottom: var(--espaco-pequeno);
+}
+
+.passo p {
+  color: var(--cor-texto-leve);
+  font-size: 0.875rem;
+}
+
+/* Seção de Ajuda Adicional */
+.ajuda-adicional {
+  max-width: 1200px;
+  margin: var(--espaco-grande) auto 0 auto;
+  padding: var(--espaco-grande) var(--espaco-medio);
+  background-color: var(--cor-primaria-clara);
+  border-radius: var(--borda-arredondada);
+  text-align: center;
+}
+
+.ajuda-adicional h2 {
+  color: var(--cor-primaria-escura);
+  margin-bottom: var(--espaco-pequeno);
+  text-align: left;
+  border-bottom: 4px solid var(--cor-primaria); /* Linha azul para combinar com a caixa */
+  padding-bottom: var(--espaco-pequeno);
+}
+
+.ajuda-adicional > p {
+  color: var(--cor-texto-leve);
+  margin-bottom: var(--espaco-grande);
+}
+
+.grid-contatos {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--espaco-medio);
+}
+
+@media (min-width: 768px) {
+  .grid-contatos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.contato-card {
+  background-color: var(--cor-fundo-caixa);
+  padding: var(--espaco-medio);
+  border-radius: var(--borda-arredondada);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.contato-card strong {
+  display: block;
+  color: var(--cor-primaria);
+  font-size: 1.125rem;
+  margin-bottom: var(--espaco-pequeno);
+}
+
+.contato-card p {
+  font-size: 0.875rem;
+  color: var(--cor-texto);
+  margin-bottom: 0;
+}
+/* Cores de Destaque por Categoria */
+.card-saude { border-top: 4px solid #10b981; } /* Verde */
+.card-saude .btn-card { color: #10b981; background-color: #ecfdf5; }
+.card-consumidor { border-top: 4px solid #f59e0b; } /* Laranja */
+.card-consumidor .btn-card { color: #d97706; background-color: #fffbeb; }
+.card-bairro { border-top: 4px solid #3b82f6; } /* Azul */
+.card-bairro .btn-card { color: #2563eb; background-color: #eff6ff; }

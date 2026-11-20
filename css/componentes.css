@@ -7,25 +7,56 @@
    Mexe em: Qualquer página que use esses componentes.
    ================================================================ */
 
-/* Barra de Acessibilidade */
+/* =========================================
+   ESTILOS DO MENU E ACESSIBILIDADE
+   ========================================= */
+
+.menu-principal a {
+  padding: 0.6rem 1.2rem;
+  border-radius: 50px; /* Botões arredondados */
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--cor-texto-leve);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.menu-principal a:hover {
+  color: var(--cor-primaria-escura);
+  background-color: var(--cor-primaria-clara);
+}
+
+/* Página Ativa (O visual de selecionado) */
+.menu-principal a.ativo {
+  background-color: var(--cor-primaria);
+  color: white;
+  box-shadow: 0 2px 5px rgba(37, 99, 235, 0.3); /* Sombra azul suave */
+}
+
+/* Barra de Acessibilidade Moderna */
 .barra-acessibilidade {
   display: flex;
-  gap: var(--espaco-pequeno);
+  gap: 0.25rem;
+  background-color: var(--cor-fundo);
+  padding: 0.25rem;
+  border-radius: 50px;
+  border: 1px solid var(--cor-borda);
 }
 
 .barra-acessibilidade button {
-  background: none;
-  border: 1px solid var(--cor-borda);
-  border-radius: var(--borda-arredondada);
-  padding: 0.25rem 0.5rem;
+  background: transparent;
+  border: none;
+  border-radius: 50px;
+  padding: 0.4rem 0.8rem;
   cursor: pointer;
   font-weight: bold;
-  color: var(--cor-texto);
+  color: var(--cor-texto-leve);
+  transition: all 0.2s;
 }
 
 .barra-acessibilidade button:hover {
   background-color: var(--cor-primaria-clara);
-  border-color: var(--cor-primaria);
+  color: var(--cor-primaria-escura);
 }
 
 /* Campo de Busca */
@@ -76,6 +107,12 @@
   transition: transform 0.2s, box-shadow 0.2s;
   display: flex;
   flex-direction: column;
+  text-decoration: none; /* Remove o sublinhado padrão de link */
+}
+
+/* Garante que o sublinhado não apareça nem ao passar o mouse */
+.card:hover, .card * {
+  text-decoration: none !important;
 }
 
 .card:hover {
@@ -124,4 +161,120 @@
   max-height: 65px; /* Ajuste este valor se achar a logo muito grande/pequena */
   width: auto;
   display: block;
+}
+
+/* =========================================
+   MENU PRINCIPAL E MEGA MENU
+   ========================================= */
+
+.menu-principal {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.menu-link, .menu-mega-btn {
+  padding: 0.6rem 1.2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--cor-texto-leve);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.menu-link:hover, .menu-mega-btn:hover {
+  color: var(--cor-primaria-escura);
+  background-color: var(--cor-primaria-clara);
+}
+
+/* Página Ativa (Controlada pelo JS agora) */
+.menu-link.ativo {
+  background-color: var(--cor-primaria);
+  color: white;
+  box-shadow: 0 2px 5px rgba(37, 99, 235, 0.3);
+}
+
+.seta {
+  font-size: 0.7rem;
+  transition: transform 0.3s;
+  display: inline-block;
+}
+
+.menu-mega-btn[aria-expanded="true"] .seta {
+  transform: rotate(180deg);
+}
+
+/* O MEGA MENU (Full-Width) */
+.mega-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: var(--cor-fundo-caixa);
+  border-bottom: 1px solid var(--cor-borda);
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
+  
+  /* Animação inicial (escondido) */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  z-index: 99;
+}
+
+.mega-menu.mostrar {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.mega-menu-conteudo {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--espaco-grande) var(--espaco-medio);
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* Mobile: 1 coluna */
+  gap: var(--espaco-grande);
+}
+
+@media (min-width: 768px) {
+  .mega-menu-conteudo {
+    grid-template-columns: repeat(3, 1fr); /* Desktop: 3 colunas */
+  }
+}
+
+@media (min-width: 1024px) {
+  .mega-menu-conteudo {
+    grid-template-columns: repeat(5, 1fr); /* Telas grandes: 5 colunas */
+  }
+}
+
+.mega-coluna h3 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.mega-coluna h3 a {
+  color: var(--cor-primaria);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.mega-coluna h3 a:hover {
+  color: var(--cor-primaria-escura);
+  text-decoration: underline;
+}
+
+.mega-coluna p {
+  font-size: 0.875rem;
+  color: var(--cor-texto-leve);
+  line-height: 1.4;
+  margin: 0;
 }
