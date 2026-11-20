@@ -80,13 +80,19 @@
   margin-bottom: 0.25rem;
   color: var(--cor-texto);
 }
-.campo-grupo input {
+.campo-grupo input,
+.campo-grupo textarea {
   width: 100%;
   padding: 0.5rem;
   border: 1px solid var(--cor-borda);
-  border-radius: var(--borda-arredondada);
+  border-radius: var(--cor-borda);
   font-family: var(--fonte-base);
   font-size: 1rem;
+}
+
+.campo-grupo textarea {
+  resize: vertical; /* Permite o usuário aumentar o campo */
+  min-height: 80px;
 }
 .campo-grupo input:focus {
   outline: 2px solid var(--cor-primaria);

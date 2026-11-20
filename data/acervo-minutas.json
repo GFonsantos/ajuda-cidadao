@@ -56,7 +56,7 @@
       "texto_minuta": "AO ILUSTRÍSSIMO(A) SENHOR(A) SECRETÁRIO(A) DE FAZENDA DO MUNICÍPIO DE [NOME DO MUNICÍPIO]\n\nAssunto: Requerimento de isenção de IPTU para aposentado(a).\n\nEu, [SEU NOME COMPLETO], portador(a) do RG nº [NÚMERO DO RG], inscrito(a) no CPF sob o nº [NÚMERO DO CPF], nascido(a) em [DATA DE NASCIMENTO], venho, respeitosamente, requerer a isenção do Imposto Predial e Territorial Urbano (IPTU) referente ao imóvel localizado na [ENDEREÇO COMPLETO DO IMÓVEL], inscrição imobiliária nº [NÚMERO DA MATRÍCULA DO IMÓVEL].\n\nSou aposentado(a) e este é o meu único imóvel, utilizado exclusivamente para minha moradia, conforme comprovam os documentos em anexo.\n\nFundamento o presente pedido na Lei Orgânica do Município e no Estatuto do Idoso (Lei Federal nº 10.741/2003), que garantem a proteção e a prioridade no atendimento a pessoas com mais de 60 anos.\n\nSolicito a análise do pedido e a devida atualização do cadastro imobiliário.\n\n[NOME DO MUNICÍPIO], [DATA ATUAL].\n\n_________________________________________\n[SEU NOME COMPLETO]\nTelefone: [SEU TELEFONE]"
     },
     {
-      "id": "habitation-contrato-locacao",
+      "id": "habitacao-contrato-locacao",
       "categoria": "Habitação e Isenções",
       "titulo": "Contrato de Locação Residencial Simplificado",
       "resumo": "Contrato padrão para aluguel de casa ou apartamento, com cláusulas essenciais para locador e locatário.",

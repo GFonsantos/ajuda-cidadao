@@ -40,7 +40,8 @@ document.addEventListener('DOMContentLoaded', () => {
           'saude': 'Saúde Pública',
           'consumidor': 'Direitos do Consumidor',
           'bairro': 'Infraestrutura do Bairro',
-          'educacao': 'Educação e Creches'
+          'educacao': 'Educação e Creches',
+          'habitacao': 'Habitação e Isenções'
         };
         if (mapaCat[catParam]) {
           categoriaAtiva = mapaCat[catParam];

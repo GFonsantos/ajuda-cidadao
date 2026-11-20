@@ -56,14 +56,25 @@ document.addEventListener('DOMContentLoaded', async () => {
         const label = document.createElement('label');
         label.textContent = nome.charAt(0).toUpperCase() + nome.slice(1).toLowerCase();
         
-        const input = document.createElement('input');
-        input.type = 'text';
+        // --- CORREÇÃO 1: nomeUpper DEVE vir antes de ser usado ---
+        const nomeUpper = nome.toUpperCase();
+
+        // Se o campo pedir descrição ou texto longo, usamos textarea
+        const isTextoLongo = nomeUpper.includes('DESCREVER') || nomeUpper.includes('PROBLEMA') || nomeUpper.includes('MOTIVO') || nomeUpper.includes('RELATO');
+        
+        let input;
+        if (isTextoLongo) {
+            input = document.createElement('textarea');
+            input.rows = 4;
+        } else {
+            input = document.createElement('input');
+            input.type = 'text';
+        }
+        
         input.dataset.placeholder = `[${nome}]`; 
         input.placeholder = `Digite aqui...`;
 
         // --- APLICAR MÁSCARAS E FORMATAÇÃO ---
-        const nomeUpper = nome.toUpperCase();
-        
         if (nomeUpper.includes('CPF') && nomeUpper.includes('CNPJ')) {
             Mascaras.aplicar(input, 'cpfcnpj');
         } else if (nomeUpper.includes('CPF')) {
@@ -78,7 +89,15 @@ document.addEventListener('DOMContentLoaded', async () => {
             Mascaras.aplicar(input, 'telefone');
         } else if (nomeUpper.includes('ENDEREÇO') || nomeUpper.includes('ENDERECO') || nomeUpper.includes('RUA') || nomeUpper.includes('BAIRRO') || nomeUpper.includes('CIDADE') || nomeUpper.includes('COMPLEMENTO')) {
             Mascaras.aplicar(input, 'nome');
+        } else if (nomeUpper.includes('E-MAIL') || nomeUpper.includes('EMAIL')) {
+            // E-mails não recebem máscara
+        } else if (isTextoLongo) {
+            // Textos longos não recebem máscara
+        } else if (nomeUpper.includes('NOME')) {
+            // NOVO: Nomes próprios vão para Title Case (Iniciais Maiúsculas)
+            Mascaras.aplicar(input, 'nome');
         } else {
+            // REGRA GERAL: O resto (ex: cidade, órgão) vira CAIXA ALTA
             Mascaras.aplicar(input, 'maiuscula');
         }
 
@@ -94,7 +113,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     // 4. Função que substitui os dados no texto
     function atualizarTextoDocumento() {
       let textoAtualizado = minuta.texto_minuta;
-      const inputs = elFormulario.querySelectorAll('input');
+      
+      // --- CORREÇÃO 2: Adicionado 'textarea' para atualizar os textos longos ---
+      const inputs = elFormulario.querySelectorAll('input, textarea');
 
       inputs.forEach(input => {
         const valor = input.value.trim();

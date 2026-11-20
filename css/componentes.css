@@ -33,6 +33,14 @@
   box-shadow: 0 2px 5px rgba(37, 99, 235, 0.3); /* Sombra azul suave */
 }
 
+/* Correção de Acessibilidade: Alto Contraste */
+body.alto-contraste .menu-principal a.ativo,
+body.alto-contraste .busca-container button,
+body.alto-contraste .btn-imprimir,
+body.alto-contraste .btn-card {
+  color: #000000 !important; /* Texto preto no fundo amarelo */
+}
+
 /* Barra de Acessibilidade Moderna */
 .barra-acessibilidade {
   display: flex;
@@ -158,7 +166,7 @@
 }
 
 .logo-img {
-  max-height: 65px; /* Ajuste este valor se achar a logo muito grande/pequena */
+  max-height: 75px; /* Ajuste este valor se achar a logo muito grande/pequena */
   width: auto;
   display: block;
 }
