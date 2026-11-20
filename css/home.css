@@ -51,8 +51,12 @@
 }
 
 @media (min-width: 768px) {
-  .grid-categorias { grid-template-columns: repeat(3, 1fr); }
+  .grid-categorias { grid-template-columns: repeat(2, 1fr); }
   .grid-atalhos { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (min-width: 992px) {
+  .grid-categorias { grid-template-columns: repeat(4, 1fr); }
 }
 
 /* ================================================================
@@ -185,3 +189,7 @@
 .card-consumidor .btn-card { color: #d97706; background-color: #fffbeb; }
 .card-bairro { border-top: 4px solid #3b82f6; } /* Azul */
 .card-bairro .btn-card { color: #2563eb; background-color: #eff6ff; }
+.card-servicos { border-top: 4px solid #7c3aed; } /* Roxo */
+.card-servicos .btn-card { color: #7c3aed; background-color: #f5f3ff; }
+.card-pequenas-causas { border-top: 4px solid #dc2626; } /* Vermelho */
+.card-pequenas-causas .btn-card { color: #dc2626; background-color: #fef2f2; }

@@ -258,7 +258,7 @@ body.alto-contraste .btn-card {
 
 @media (min-width: 1024px) {
   .mega-menu-conteudo {
-    grid-template-columns: repeat(5, 1fr); /* Telas grandes: 5 colunas */
+    grid-template-columns: repeat(4, 1fr); /* Telas grandes: 2 linhas (4+3) */
   }
 }
 

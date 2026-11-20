@@ -41,7 +41,9 @@ document.addEventListener('DOMContentLoaded', () => {
           'consumidor': 'Direitos do Consumidor',
           'bairro': 'Infraestrutura do Bairro',
           'educacao': 'Educação e Creches',
-          'habitacao': 'Habitação e Isenções'
+          'habitacao': 'Habitação e Isenções',
+          'servicos': 'Serviços Essenciais',
+          'pequenas-causas': 'Pequenas Causas'
         };
         if (mapaCat[catParam]) {
           categoriaAtiva = mapaCat[catParam];

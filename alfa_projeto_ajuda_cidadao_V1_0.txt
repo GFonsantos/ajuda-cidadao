@@ -241,16 +241,24 @@ FLUXO DE IMPRESSÃO:
     Causas (Ação de Cobrança, Dano Moral, etc.) e contratos.
 
 
---------------------------------------------------------------------------------
 10. ROTEIRO FUTURO (roadmap acordado)
 --------------------------------------------------------------------------------
 
   PRÓXIMOS (na ordem):
-  1. Adicionar a categoria e as minutas de PEQUENAS CAUSAS.
-  2. Testar o layout mobile em aparelhos reais (iPhone e Android).
-  3. Publicar no GitHub Pages.
-  4. Criar o roteiro de apresentação para a banca (destacar LGPD, Acessibilidade 
-     e a facilidade do preenchimento).
+  1. EXPANSÃO DO ACERVO (O "Pacote Pesado"): O Gil tem uma lista completa de 
+     direitos (Cidade/Vias, Serviços Essenciais, Saúde, Consumidor, Educação, 
+     Pequenas Causas). Vamos selecionar os top 10 e transformá-los em minutas JSON.
+  2. ASSISTENTE DE TRIAGEM (A "Nova Busca"): Substituir a barra de busca simples 
+     por um fluxo de perguntas (Wizard) na Home. Ex: "O que você precisa?" -> 
+     "Problema com Vizinho" -> "Barulho" -> Exibe o documento pronto.
+  3. DIRETÓRIO DE EMERGÊNCIA: Criar uma seção ou página com botões de discagem 
+     direta via celular (tel:190, tel:192, Disque 100, 180).
+  4. GUIA "ONDE ENTREGAR": Adicionar links oficiais (Consumidor.gov.br, Fala.BR) 
+     e checklist de anexos na página documento.html.
+  5. LEITOR DE VOZ (Acessibilidade): Implementar a Web Speech API (window.speechSynthesis) 
+     para ler o texto da minuta em voz alta para pessoas cegas.
+  6. Testar o layout mobile em aparelhos reais e Publicar no GitHub Pages.
+  7. Criar o roteiro de apresentação para a banca.
 
   EM ESPERA:
   - Geração nativa de PDF sem a janela de impressão (usando biblioteca jsPDF).
