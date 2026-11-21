@@ -81,12 +81,18 @@
                 <form id="formulario-dinamico">
                     <!-- Os campos serão injetados pelo JS aqui -->
                 </form>
+                <button type="button" id="btn-conferir" class="btn-conferir no-print">
+                    Conferir documento &rarr;
+                </button>
             </section>
 
             <!-- COLUNA 2: O DOCUMENTO (PRÉ-VISUALIZAÇÃO E IMPRESSÃO) -->
             <section class="area-documento">
                 <h2 class="no-print">2. Confira e imprima</h2>
                 <div class="acoes-documento no-print">
+                    <button type="button" id="btn-editar" class="btn-editar">
+                        &larr; Editar
+                    </button>
                     <button type="button" class="btn-imprimir" onclick="window.print()">
                         🖨️ Imprimir / Salvar em PDF
                     </button>

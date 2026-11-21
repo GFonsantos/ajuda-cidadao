@@ -38,9 +38,115 @@
   align-items: start;
 }
 
+/* =========================================
+   CONTROLE DE VISUALIZAÇÃO MOBILE (WIZARD)
+   ========================================= */
+.btn-conferir, .btn-editar {
+  display: none; /* Escondidos por padrão no desktop */
+}
+
+@media (max-width: 991px) {
+  /* Estilo do botão "Conferir documento" */
+  .btn-conferir {
+    display: block;
+    width: 100%;
+    background-color: var(--cor-primaria);
+    color: white;
+    border: none;
+    padding: var(--espaco-medio);
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: var(--borda-arredondada);
+    cursor: pointer;
+    margin-top: var(--espaco-grande);
+    text-align: center;
+  }
+  .btn-conferir:hover {
+    background-color: var(--cor-primaria-escura);
+  }
+
+  /* Reduz o título no celular */
+  .cabecalho-documento h1 {
+    font-size: 1.5rem; /* Tamanho menor para não quebrar tanto */
+  }
+
+  /* Ajusta a barra de ações para colocar os botões lado a lado */
+  .acoes-documento {
+    justify-content: space-between;
+    flex-wrap: nowrap; /* Impede que desçam de linha */
+    gap: 0.5rem;
+  }
+
+  /* Botão Editar */
+  .btn-editar {
+    display: block;
+    flex: 1; /* Ocupa metade do espaço */
+    background-color: transparent;
+    color: var(--cor-texto-leve);
+    border: 1px solid var(--cor-borda);
+    padding: 0.75rem 0.5rem; /* Padding menor para caber o texto */
+    font-size: 0.9rem;
+    font-weight: bold;
+    border-radius: var(--borda-arredondada);
+    cursor: pointer;
+    text-align: center;
+  }
+  .btn-editar:hover {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+  }
+
+  /* Botão Imprimir */
+  .acoes-documento .btn-imprimir {
+    flex: 1; /* Ocupa a outra metade */
+    padding: 0.75rem 0.5rem;
+    font-size: 0.9rem;
+    justify-content: center;
+    margin: 0;
+  }
+
+  /* A mágica da visibilidade */
+  .area-documento {
+    display: none; /* Esconde o documento por padrão no mobile */
+  }
+  .area-documento.visivel {
+    display: block; /* Mostra quando o usuário clica em "Conferir" */
+  }
+  .area-formulario.oculto {
+    display: none; /* Esconde o form para o usuário focar na leitura */
+  }
+}
 @media (min-width: 992px) {
   .layout-documento {
     grid-template-columns: 350px 1fr; /* Formulário fixo, documento cresce */
+  }
+
+  /* Cada painel vira uma "janela" com altura fixa */
+  .area-formulario,
+  .area-documento {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 160px); /* Altura fixa para não vazar no rodapé */
+    overflow: hidden; /* Corta qualquer coisa que tente sair do painel */
+  }
+
+  /* Só o formulário rola; o título e o aviso de privacidade ficam fixos */
+  .area-formulario form {
+    flex: 1;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-gutter: stable;
+    padding-right: 0.5rem;
+    min-height: 0; /* OBRIGATÓRIO: permite o scroll interno no flexbox */
+  }
+
+  /* Só a folha A4 rola; o título e o botão ficam fixos */
+  .area-documento .folha-a4 {
+    flex: 1;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-gutter: stable;
+    min-height: 0; /* OBRIGATÓRIO: ignora os 29.7cm no desktop e encaixa no painel */
   }
 }
 
@@ -50,8 +156,6 @@
   padding: var(--espaco-medio);
   border-radius: var(--borda-arredondada);
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-  position: sticky;
-  top: 100px; /* Fica fixo enquanto rola o documento */
 }
 
 .area-formulario h2, .area-documento h2 {
@@ -103,6 +207,9 @@
 .acoes-documento {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap; /* Permite que os botões desçam de linha se faltar espaço */
+  gap: 10px;       /* Dá um respiro entre o botão Editar e o Imprimir */
   margin-bottom: var(--espaco-medio);
 }
 
@@ -136,6 +243,13 @@
   text-align: justify;
   white-space: pre-wrap; /* Respeita as quebras de linha do JSON */
   color: #000;
+  
+  /* NOVAS REGRAS PARA NÃO VAZAR A TELA */
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  overflow-wrap: break-word; /* Quebra palavras muito longas (ex: links ou textos entre colchetes) */
+  word-wrap: break-word;
 }
 
 /* ================================================================
@@ -143,29 +257,101 @@
    Quando o usuário manda imprimir, tudo isso entra em ação.
    ================================================================ */
 @media print {
-  /* Esconde tudo que tem a classe no-print (menu, rodapé, formulário, botões) */
+  /* 1. Esconde tudo que tem a classe no-print (menu, rodapé, formulário, botões, cabeçalho da página) */
   .no-print {
     display: none !important;
   }
 
-  /* Zera as margens do site e desfaz o grid de duas colunas */
+  /* 2. Zera as margens do site e desfaz o grid de duas colunas */
   body, main, .container {
     margin: 0 !important;
     padding: 0 !important;
     background: white !important;
+    width: 100% !important;
   }
 
   .layout-documento {
-    display: block !important; /* Desfaz o grid para o papel ocupar a tela toda */
+    display: block !important;
   }
 
-  /* Configura a folha A4 para impressão real */
-  .folha-a4 {
-    border: none;
-    box-shadow: none;
-    padding: 0; /* Margens da impressora cuidam disso */
-    margin: 0;
-    width: 100%;
-    min-height: auto;
+  /* 3. Configura a área do documento e a folha A4 para ocupar a impressão perfeitamente */
+  .area-documento,
+  .area-documento .folha-a4 {
+    display: block !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    width: 100% !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important; /* As margens da impressora cuidam do espaçamento */
+    margin: 0 !important;
+    min-height: auto !important;
   }
 }
+
+/* =========================================
+   CONTROLE DE VISUALIZAÇÃO MOBILE (WIZARD)
+   ========================================= */
+.btn-conferir, .btn-editar {
+  display: none; /* Escondidos por padrão no desktop */
+}
+
+@media (max-width: 991px) {
+  /* Estilo do botão "Conferir documento" */
+  .btn-conferir {
+    display: block;
+    width: 100%;
+    background-color: var(--cor-primaria);
+    color: white;
+    border: none;
+    padding: var(--espaco-medio);
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: var(--borda-arredondada);
+    cursor: pointer;
+    margin-top: var(--espaco-grande);
+    text-align: center;
+  }
+  .btn-conferir:hover {
+    background-color: var(--cor-primaria-escura);
+  }
+
+  /* Estilo do botão "Editar" */
+  .btn-editar {
+    display: block;
+    background-color: transparent;
+    color: var(--cor-texto-leve);
+    border: 1px solid var(--cor-borda);
+    padding: var(--espaco-medio) var(--espaco-grande);
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: var(--borda-arredondada);
+    cursor: pointer;
+    margin-right: auto; /* Empurra o botão Imprimir para a direita */
+  }
+  .btn-editar:hover {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+  }
+
+  /* A mágica da visibilidade */
+  .area-documento {
+    display: none; /* Esconde o documento por padrão no mobile */
+  }
+  .area-documento.visivel {
+    display: block; /* Mostra quando o usuário clica em "Conferir" */
+  }
+  .area-formulario.oculto {
+    display: none; /* Esconde o form para o usuário focar na leitura */
+  }
+}
+/* Ajustes específicos para telas menores */
+@media (max-width: 991px) {
+  .folha-a4 {
+    padding: 1.5rem 1rem; /* Margens menores no celular para caber o texto */
+    font-size: 13pt;      /* Fonte levemente menor para telas pequenas */
+    min-height: auto;     /* Não precisa ter a altura de uma folha física na tela */
+  }
+}
+
