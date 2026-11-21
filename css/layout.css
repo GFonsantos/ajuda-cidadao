@@ -7,6 +7,16 @@
    Mexe em: Estrutura das 5 páginas.
    ================================================================ */
 
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main, .container {
+  flex: 1; /* Faz o conteúdo principal esticar e empurrar o rodapé para baixo */
+}
+
 /* Cabeçalho */
 .cabecalho {
   background-color: var(--cor-fundo-caixa);
