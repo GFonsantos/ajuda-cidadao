@@ -86,54 +86,70 @@
 .grid-passos {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--espaco-medio);
-  margin-top: var(--espaco-medio);
-  text-align: center;
+  gap: var(--espaco-grande);
+  margin-top: var(--espaco-grande);
+  text-align: left; /* Muda para alinhamento à esquerda, mais editorial */
 }
 
 @media (min-width: 768px) {
   .grid-passos {
     grid-template-columns: repeat(3, 1fr);
+    position: relative;
+  }
+  
+  /* Linha sutil conectando os passos no desktop */
+  .grid-passos::before {
+    content: '';
+    position: absolute;
+    top: 30px;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+    background-color: #e2e8f0;
+    z-index: -1;
   }
 }
 
 .passo {
-  /* Fundo azul pastel extremamente suave, transmite calma */
-  background-color: #f0f9ff; 
-  padding: var(--espaco-grande) var(--espaco-medio);
-  border-radius: var(--borda-arredondada);
-  
-  /* Borda lateral e inferior sutil, e a superior um pouco mais destacada */
-  border: 1px solid #e0f2fe;
-  border-top: 4px solid #bae6fd; 
-  
-  /* Remove a sensação de "flutuação" para manter a tela plana e calma */
-  box-shadow: none; 
+  background-color: transparent; /* Remove o fundo */
+  padding: 0;
+  border: none; /* Remove as bordas */
+  box-shadow: none;
 }
 
 .passo-icone {
-  width: 50px;
-  height: 50px;
-  /* Azul céu um pouco mais firme, mas longe do azul "gov.br" */
-  background-color: #60a5fa; 
-  color: #ffffff; /* Número em branco para dar clareza e alto contraste */
-  font-size: 1.5rem;
-  font-weight: bold;
+  width: 60px;
+  height: 60px;
+  background-color: #ffffff; /* Fundo branco */
+  color: var(--cor-primaria); /* Número na cor de destaque */
+  font-size: 1.75rem;
+  font-weight: 800;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  margin: 0 auto var(--espaco-medio) auto;
+  border: 2px solid #e2e8f0; /* Borda fina em vez de fundo cheio */
+  margin: 0 0 1.5rem 0; /* Alinha à esquerda */
+  transition: all 0.3s ease;
+}
+
+.passo:hover .passo-icone {
+  border-color: var(--cor-primaria);
+  color: #ffffff;
+  background-color: var(--cor-primaria);
 }
 
 .passo h3 {
-  font-size: 1.125rem;
-  margin-bottom: var(--espaco-pequeno);
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--cor-texto);
+  font-weight: 700;
 }
 
 .passo p {
-  color: var(--cor-texto-leve);
-  font-size: 0.875rem;
+  color: #64748b;
+  font-size: 0.95rem;
+  line-height: 1.6;
 }
 
 /* Seção de Ajuda Adicional */
@@ -190,14 +206,78 @@
   color: var(--cor-texto);
   margin-bottom: 0;
 }
-/* Cores de Destaque por Categoria */
-.card-saude { border-top: 4px solid #10b981; } /* Verde */
-.card-saude .btn-card { color: #10b981; background-color: #ecfdf5; }
-.card-consumidor { border-top: 4px solid #f59e0b; } /* Laranja */
-.card-consumidor .btn-card { color: #d97706; background-color: #fffbeb; }
-.card-bairro { border-top: 4px solid #3b82f6; } /* Azul */
-.card-bairro .btn-card { color: #2563eb; background-color: #eff6ff; }
-.card-servicos { border-top: 4px solid #7c3aed; } /* Roxo */
-.card-servicos .btn-card { color: #7c3aed; background-color: #f5f3ff; }
-.card-pequenas-causas { border-top: 4px solid #dc2626; } /* Vermelho */
-.card-pequenas-causas .btn-card { color: #dc2626; background-color: #fef2f2; }
+/* Categorias Refinadas (Sem tarja, foco no conteúdo) */
+.grid-categorias .card {
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  background-color: #ffffff;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
+}
+
+.grid-categorias .card:hover {
+  border-color: #cbd5e1;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 20px -8px rgba(0,0,0,0.08);
+}
+
+.grid-categorias .card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--cor-texto);
+}
+
+.grid-categorias .card p {
+  font-size: 0.95rem;
+  color: #64748b;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+/* Cores nos botões e fundo pastel no hover */
+.card-saude .btn-card { color: #10b981; }
+.card-saude:hover { border-color: #10b981; background-color: #ecfdf5; }
+.card-saude:hover .btn-card { color: #10b981; }
+
+.card-consumidor .btn-card { color: #d97706; }
+.card-consumidor:hover { border-color: #f59e0b; background-color: #ffeeda; }
+.card-consumidor:hover .btn-card { color: #d97706; }
+
+.card-bairro .btn-card { color: #2563eb; }
+.card-bairro:hover { border-color: #3b82f6; background-color: #eff6ff; }
+.card-bairro:hover .btn-card { color: #2563eb; }
+
+.card-servicos .btn-card { color: #7c3aed; }
+.card-servicos:hover { border-color: #7c3aed; background-color: #f5f3ff; }
+.card-servicos:hover .btn-card { color: #7c3aed; }
+
+.card-pequenas-causas .btn-card { color: #dc2626; }
+.card-pequenas-causas:hover { border-color: #dc2626; background-color: #fef2f2; }
+.card-pequenas-causas:hover .btn-card { color: #dc2626; }
+
+/* Deixa o botão 'Ver Modelos' mais limpo */
+.grid-categorias .btn-card {
+  background: transparent;
+  padding: 0;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Ignora a regra azul padrão no hover */
+.grid-categorias .card:hover .btn-card {
+  background-color: transparent;
+}
+
+/* Traz a setinha de volta e cria a animação */
+.grid-categorias .btn-card::after {
+  content: ' →';
+  transition: transform 0.2s ease;
+}
+
+/* Faz a setinha deslizar para a direita no hover */
+.grid-categorias .card:hover .btn-card::after {
+  transform: translateX(4px);
+}

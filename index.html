@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/componentes.css">
     <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/triagem.css">
 </head>
 <body>
 
@@ -21,7 +23,7 @@
                 <img src="assets/icons/logo.jpg" alt="Ajuda Cidadão" class="logo-img">
             </a>
             
-            <nav class="menu-principal" aria-label="Navegação principal">
+                <nav class="menu-principal" id="menu-principal" aria-label="Navegação principal">
                 <!-- O JS vai adicionar a classe 'ativo' automaticamente -->
                 <a href="index.html" class="menu-link">Início</a>
                 <a href="biblioteca.html" class="menu-link">Biblioteca</a>
@@ -39,6 +41,11 @@
                 <button id="btn-diminuir-fonte" title="Diminuir fonte">A-</button>
                 <button id="btn-alto-contraste" title="Alternar alto contraste">🌓</button>
             </div>
+
+            <!-- Botão Hamburger (Só aparece no celular) -->
+            <button class="menu-hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
         </div>
 
         <!-- MEGA MENU (Full-Width) -->
@@ -94,7 +101,7 @@
             </div>
         </section>
 
-        <!-- SEÇÃO COMO FUNCIONA -->
+                <!-- SEÇÃO COMO FUNCIONA -->
         <section class="como-funciona">
             <h2 class="secao-titulo">Como o Ajuda Cidadão funciona?</h2>
             <div class="grid-passos">
@@ -115,6 +122,15 @@
                 </div>
             </div>
         </section>
+
+        <!-- ASSISTENTE DE TRIAGEM -->
+        <h2 class="secao-titulo">Não sabe por onde começar?</h2>
+        <div class="container-triagem">
+            <div id="conteudo-triagem">
+                <!-- O JavaScript vai injetar as perguntas aqui -->
+                <p>Carregando assistente...</p>
+            </div>
+        </div>
 
         <!-- SEÇÃO DE CATEGORIAS -->
         <h2 class="secao-titulo">Navegue por Categoria</h2>
@@ -193,5 +209,6 @@
     <script src="js/menu.js"></script>
     <script src="js/home.js"></script>
     <script src="js/animacoes.js"></script>
+    <script src="js/triagem.js"></script>
 </body>
 </html>

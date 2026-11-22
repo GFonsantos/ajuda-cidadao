@@ -232,7 +232,7 @@ body.alto-contraste .btn-card {
   visibility: hidden;
   transform: translateY(-10px);
   transition: all 0.3s ease;
-  z-index: 99;
+  z-index: 1050;
 }
 
 .mega-menu.mostrar {

@@ -81,3 +81,124 @@ main, .container {
   margin: 0 auto;
   padding: var(--espaco-grande) var(--espaco-medio);
 }
+
+/* =========================================
+   MENU HAMBURGER E RESPONSIVIDADE DO CABEÇALHO
+   ========================================= */
+.menu-hamburger {
+  display: none; /* Escondido no desktop */
+  background: transparent;
+  border: none;
+  color: var(--cor-texto-leve);
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+@media (max-width: 991px) {
+  /* Alinha Logo, Acessibilidade e Hamburger na mesma linha */
+  .cabecalho-conteudo {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+  }
+
+  .logo { flex: 0 0 auto; }
+  .logo-img { max-height: 50px; }
+
+  /* Centraliza a barra de acessibilidade entre a logo e o menu */
+  .barra-acessibilidade {
+    margin: 0 auto; 
+  }
+
+  /* Mostra o botão hamburger */
+  .menu-hamburger {
+    display: block;
+  }
+
+  /* Transforma o menu principal em uma gaveta (dropdown) */
+  .menu-principal {
+    display: none; /* Esconde o menu normal */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background-color: var(--cor-fundo-caixa);
+    border-bottom: 1px solid var(--cor-borda);
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+    padding: 1rem;
+    z-index: 999;
+    border-radius: 0; /* Tira o formato de pílula no celular */
+  }
+
+  /* Classe ativada pelo JS para abrir o menu */
+  .menu-principal.aberto {
+    display: flex;
+  }
+
+  /* Deixa os links com área de clique maior e alinhados à esquerda */
+  .menu-principal a, 
+  .menu-principal button {
+    width: 100%;
+    text-align: left;
+    padding: 1rem;
+    border-radius: 8px;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 991px) {
+  /* Alinha Logo, Acessibilidade e Hamburger na mesma linha */
+  .cabecalho-conteudo {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+  }
+
+  .logo { flex: 0 0 auto; }
+  .logo-img { max-height: 50px; }
+
+  .barra-acessibilidade {
+    margin: 0 auto; 
+  }
+
+  /* Mostra o botão hamburger */
+  .menu-hamburger {
+    display: block;
+  }
+  
+  /* Impede que o clique no ícone SVG bugue o botão */
+  .menu-hamburger svg {
+    pointer-events: none;
+  }
+
+  /* Força o menu a esconder no celular por padrão */
+  .menu-principal {
+    display: none !important; /* O !important garante que ele esconda */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background-color: var(--cor-fundo-caixa);
+    border-bottom: 1px solid var(--cor-borda);
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+    padding: 1rem;
+    z-index: 999;
+    border-radius: 0;
+  }
+
+  /* Força o menu a aparecer quando tem a classe 'aberto' */
+  .menu-principal.aberto {
+    display: flex !important;
+  }
+
+  .menu-principal a, 
+  .menu-principal button {
+    width: 100%;
+    text-align: left;
+    padding: 1rem;
+    border-radius: 8px;
+    justify-content: space-between;
+  }
+}

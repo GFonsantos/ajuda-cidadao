@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biblioteca de Modelos - Ajuda Cidadão</title>
     
-    <!-- CSS -->
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/componentes.css">
@@ -13,15 +12,13 @@
 </head>
 <body>
 
-    <!-- CABEÇALHO PADRÃO -->
     <header class="cabecalho no-print">
         <div class="cabecalho-conteudo">
             <a href="index.html" class="logo" aria-label="Página inicial do Ajuda Cidadão">
                 <img src="assets/icons/logo.jpg" alt="Ajuda Cidadão" class="logo-img">
             </a>
             
-            <nav class="menu-principal" aria-label="Navegação principal">
-                <!-- O JS vai adicionar a classe 'ativo' automaticamente -->
+            <nav class="menu-principal" id="menu-principal" aria-label="Navegação principal">
                 <a href="index.html" class="menu-link">Início</a>
                 <a href="biblioteca.html" class="menu-link">Biblioteca</a>
                 
@@ -38,9 +35,12 @@
                 <button id="btn-diminuir-fonte" title="Diminuir fonte">A-</button>
                 <button id="btn-alto-contraste" title="Alternar alto contraste">🌓</button>
             </div>
+
+            <button class="menu-hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
         </div>
 
-        <!-- MEGA MENU (Full-Width) -->
         <div class="mega-menu" id="mega-menu">
             <div class="mega-menu-conteudo">
                 <div class="mega-coluna">
@@ -63,54 +63,41 @@
                     <h3><a href="biblioteca.html?cat=habitacao">Habitação e Isenções</a></h3>
                     <p>Isenção de IPTU, contratos e direitos.</p>
                 </div>
-                <div class="mega-coluna">
-                    <h3><a href="biblioteca.html?cat=servicos">Serviços Essenciais</a></h3>
-                    <p>Corte de água, luz e religação.</p>
-                </div>
-                <div class="mega-coluna">
-                    <h3><a href="biblioteca.html?cat=pequenas-causas">Pequenas Causas</a></h3>
-                    <p>Cobranças, acidentes e danos do dia a dia.</p>
-                </div>
             </div>
         </div>
     </header>
 
     <main class="container">
-        <h1 class="secao-titulo">Acervo Completo de Modelos</h1>
-        
-        <!-- Área de Busca e Filtros -->
-        <div class="area-controles">
+        <!-- ÁREA DE CONTROLES: BUSCA + FILTROS -->
+        <div class="area-controles no-print">
             <div class="busca-container">
-                <label for="campo-busca" class="sr-only">Filtrar por palavra-chave</label>
-                <input type="text" id="campo-busca" placeholder="Busque por palavra-chave (ex: remédio, buraco, creche)...">
+                <label for="campo-busca" class="sr-only">Buscar modelos por palavra-chave</label>
+                <input type="text" id="campo-busca" placeholder="Buscar modelos (ex: falta de remédio, buraco, conta de luz...)">
             </div>
 
-            <div class="filtros-categoria" id="botoes-filtro" aria-label="Filtrar por categoria">
-                <button class="filtro-btn ativo" data-cat="todos">Todos</button>
-                <button class="filtro-btn" data-cat="Saúde Pública">Saúde</button>
-                <button class="filtro-btn" data-cat="Direitos do Consumidor">Consumidor</button>
-                <button class="filtro-btn" data-cat="Infraestrutura do Bairro">Bairro</button>
-                <button class="filtro-btn" data-cat="Educação e Creches">Educação</button>
-                <button class="filtro-btn" data-cat="Habitação e Isenções">Habitação</button>
-                <button class="filtro-btn" data-cat="Serviços Essenciais">Serviços</button>
-                <button class="filtro-btn" data-cat="Pequenas Causas">Pequenas Causas</button>
+            <div class="filtros-categoria">
+                <button type="button" class="filtro-btn ativo" data-cat="todos">Todos</button>
+                <button type="button" class="filtro-btn" data-cat="Saúde Pública">Saúde Pública</button>
+                <button type="button" class="filtro-btn" data-cat="Direitos do Consumidor">Direitos do Consumidor</button>
+                <button type="button" class="filtro-btn" data-cat="Infraestrutura do Bairro">Infraestrutura do Bairro</button>
+                <button type="button" class="filtro-btn" data-cat="Educação e Creches">Educação e Creches</button>
+                <button type="button" class="filtro-btn" data-cat="Habitação e Isenções">Habitação e Isenções</button>
+                <button type="button" class="filtro-btn" data-cat="Serviços Essenciais">Serviços Essenciais</button>
+                <button type="button" class="filtro-btn" data-cat="Pequenas Causas">Pequenas Causas</button>
             </div>
         </div>
 
-        <!-- Onde os cartões serão injetados pelo JavaScript -->
+        <!-- GRID DE RESULTADOS -->
         <div class="grid-resultados" id="lista-resultados">
-            <!-- Os cards aparecerão aqui -->
-            <p class="carregando">Carregando modelos...</p>
+            <!-- Os cards serão injetados pelo JS aqui -->
         </div>
     </main>
 
-    <!-- RODAPÉ PADRÃO -->
-    <footer class="rodape">
+    <footer class="rodape no-print">
         <p>Projeto Acadêmico de Utilidade Pública • 100% Gratuito e Sem Coleta de Dados</p>
         <p>Telefones Úteis: SAMU 192 | Defesa Civil 199 | Disque Direitos Humanos 100</p>
     </footer>
 
-    <!-- JS -->
     <script src="js/app.js"></script>
     <script src="js/menu.js"></script>
     <script src="js/biblioteca.js"></script>

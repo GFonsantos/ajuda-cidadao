@@ -1,0 +1,44 @@
+{
+  "inicio": {
+    "pergunta": "Qual é o seu problema?",
+    "opcoes": [
+      { "texto": "Empresas", "descricao": "Cobranças indevidas, produtos com defeito ou problemas com lojas e serviços.", "icone": "loja", "proximo": "consumidor" },
+      { "texto": "Luz ou Água", "descricao": "Falta de fornecimento, contas abusivas ou corte indevido de serviços essenciais.", "icone": "energia", "proximo": "servicos" },
+      { "texto": "Saúde", "descricao": "Falta de remédios no SUS, exames negados ou problemas com planos de saúde.", "icone": "saude", "proximo": "saude" },
+      { "texto": "Prefeitura", "descricao": "Buracos na rua, iluminação pública, falta de vaga em creche ou IPTU.", "icone": "prefeitura", "proximo": "prefeitura" },
+      { "texto": "Procon", "descricao": "Reclamações contra empresas, negativação do nome ou fraudes bancárias.", "icone": "escudo", "proximo": "consumidor" },
+      { "texto": "Secretarias", "descricao": "Documentos, isenções, benefícios sociais e acesso à informação pública.", "icone": "documento", "proximo": "prefeitura" }
+    ]
+  },
+  "consumidor": {
+    "pergunta": "Qual é o tipo de problema com a empresa?",
+    "opcoes": [
+      { "texto": "Recebi uma cobrança indevida", "descricao": "Conteste valores abusivos na sua conta de água ou energia.", "documento": "consumidor-cobranca-abusiva" },
+      { "texto": "Meu nome foi sujo sem eu dever", "descricao": "Retire a negativação do SPC/Serasa e peça indenização.", "documento": "consumidor-negativacao-indevida" },
+      { "texto": "Comprei um produto com defeito", "descricao": "Solicite a troca, o conserto ou o reembolso do valor pago.", "documento": "consumidor-produto-defeito" }
+    ]
+  },
+  "servicos": {
+    "pergunta": "O que aconteceu com a sua conta ou serviço?",
+    "opcoes": [
+      { "texto": "Cortaram minha água ou luz indevidamente", "descricao": "Solicite a religação imediata do serviço sem cobrança de taxa.", "documento": "servicos-religacao-corte-indevido" },
+      { "texto": "Minha conta veio com um valor absurdo", "descricao": "Peça a revisão da leitura e a emissão de uma nova fatura.", "documento": "consumidor-cobranca-abusiva" }
+    ]
+  },
+  "saude": {
+    "pergunta": "Qual é a sua necessidade na Saúde?",
+    "opcoes": [
+      { "texto": "Preciso de um remédio que falta no posto", "descricao": "Cobre formalmente a entrega do medicamento da sua receita.", "documento": "saude-medicamento-sus" },
+      { "texto": "O plano de saúde negou um exame", "descricao": "Faça o recurso administrativo contra a negativa do convênio.", "documento": "saude-exame-negado" },
+      { "texto": "Preciso de terapia para autismo (TEA)", "descricao": "Ação judicial para cobrir terapias negadas pelo plano.", "documento": "saude-tea-terapia-negada" }
+    ]
+  },
+  "prefeitura": {
+    "pergunta": "Com o que a Prefeitura pode ajudar?",
+    "opcoes": [
+      { "texto": "Tem um buraco na rua", "descricao": "Solicite o reparo do asfalto ou a troca de lâmpadas queimadas.", "documento": "bairro-tapa-buraco" },
+      { "texto": "Preciso de vaga em creche", "descricao": "Garanta o direito da criança à educação infantil.", "documento": "educacao-vaga-creche" },
+      { "texto": "Quero isenção de IPTU", "descricao": "Pedido para aposentados que possuem apenas um imóvel.", "documento": "habitacao-isencao-iptu" }
+    ]
+  }
+}

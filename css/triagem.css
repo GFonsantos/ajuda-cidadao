@@ -1,0 +1,243 @@
+/* ================================================================
+   TRIAGEM — ESTILOS DO ASSISTENTE (WIZARD)
+   
+   O que faz: Estiliza a caixa do assistente na Home, incluindo o grid
+              inicial com ícones e a lista editorial de sub-opções.
+   Depende de: variaveis.css
+   Mexe em: index.html (via classes geradas pelo JS)
+   ================================================================ */
+
+.container-triagem {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 3rem 2rem;
+  max-width: 1200px; 
+  width: calc(100% - (var(--espaco-medio) * 2));
+  margin: 0 auto var(--espaco-grande) auto;
+  text-align: center;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+}
+
+.triagem-pergunta {
+  font-size: 1.6rem;
+  color: #1e293b;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  text-align: left; /* Título à esquerda para combinar com a lista */
+  padding-left: 1rem;
+}
+
+/* --- GRID DA TELA INICIAL --- */
+.triagem-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  text-align: left;
+}
+
+@media (min-width: 768px) {
+  .triagem-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 992px) {
+  .triagem-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* Card com Ícone Lateral (Tela Inicial) */
+.btn-grid {
+  display: flex;
+  align-items: stretch;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+  overflow: hidden;
+}
+
+.btn-grid:hover, .btn-grid:focus {
+  border-color: var(--cor-primaria);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.08);
+  transform: translateY(-2px);
+  outline: none;
+}
+
+.btn-grid-icone {
+  color: #64748b;
+  background-color: #f8fafc;
+  width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.btn-grid:hover .btn-grid-icone {
+  color: var(--cor-primaria);
+  background-color: #eff6ff;
+}
+
+.btn-grid-conteudo {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.btn-grid-conteudo h4 {
+  font-size: 1.1rem;
+  color: #1e293b;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+.btn-grid-conteudo p {
+  font-size: 0.85rem;
+  color: #64748b;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* --- LISTA EDITORIAL DAS PERGUNTAS (Segunda Imagem) --- */
+.triagem-lista {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+  text-align: left;
+}
+
+.btn-lista {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #e2e8f0; /* A linha fina de separação */
+  padding: 1.5rem 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.btn-lista:hover, .btn-lista:focus {
+  background-color: #f8fafc; /* Fundo quase invisível no hover */
+  outline: none;
+  border-bottom-color: var(--cor-primaria); /* A linha fica azul */
+}
+
+.btn-lista-texto h4 {
+  font-size: 1.15rem;
+  color: #1e293b;
+  margin-bottom: 0.4rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.btn-lista-texto p {
+  font-size: 0.95rem;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.btn-lista-seta {
+  color: #cbd5e1;
+  font-size: 1.2rem;
+  transition: all 0.2s ease;
+  padding-left: 1rem;
+}
+
+.btn-lista:hover .btn-lista-texto h4,
+.btn-lista:hover .btn-lista-seta {
+  color: var(--cor-primaria); /* Texto e seta ficam azuis no hover */
+}
+
+.btn-lista:hover .btn-lista-seta {
+  transform: translateX(4px);
+}
+
+.triagem-voltar {
+  background: transparent;
+  color: #64748b;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 2.5rem;
+  padding: 0.5rem 1rem;
+  transition: color 0.2s;
+  
+  /* MÁGICA AQUI: Joga o botão para a direita */
+  display: block;
+  margin-left: auto; 
+  margin-right: 0; 
+}
+
+.triagem-voltar:hover {
+  color: var(--cor-primaria);
+  text-decoration: underline;
+}
+
+/* =========================================
+   RESPONSIVIDADE (MOBILE)
+   Ajusta margens, tamanhos de fonte e botões para telas pequenas
+   ========================================= */
+@media (max-width: 768px) {
+  .container-triagem {
+    padding: 2rem 1rem; /* Margem menor para não esmagar o conteúdo */
+    width: calc(100% - 2rem);
+  }
+
+  .triagem-pergunta {
+    font-size: 1.3rem; /* Título um pouco menor */
+    padding-left: 0;   /* Alinha o título com o texto da lista */
+    margin-bottom: 1.5rem;
+  }
+
+  /* Ajustes no Grid (Cards de ícone) */
+  .btn-grid-icone {
+    width: 60px; /* Diminui a barra lateral para sobrar mais espaço pro texto */
+  }
+
+  .btn-grid-conteudo {
+    padding: 1rem;
+  }
+
+  .btn-grid-conteudo h4 {
+    font-size: 1rem;
+  }
+
+  .btn-grid-conteudo p {
+    font-size: 0.8rem;
+  }
+
+  /* Ajustes na Lista Editorial */
+  .btn-lista {
+    padding: 1.25rem 0; /* Tira o padding lateral para alinhar com o título */
+  }
+
+  .btn-lista-texto h4 {
+    font-size: 1rem;
+  }
+
+  .btn-lista-texto p {
+    font-size: 0.85rem;
+  }
+
+  /* Botão Voltar no Mobile */
+  .triagem-voltar {
+    margin-left: 0;       /* Remove o alinhamento à direita */
+    width: 100%;          /* Botão de largura total (Fitts's Law) */
+    text-align: center;
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-top: 2rem;
+  }
+}

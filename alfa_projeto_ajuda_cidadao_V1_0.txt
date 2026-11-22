@@ -72,6 +72,13 @@ FASE 4 — IMPRESSÃO: Criação da regra @media print que esconde o site e
 FASE 5 — REFINAMENTO VISUAL: Inclusão de animações de scroll (Intersection 
   Observer), Mega Menu dropdown, logo própria e ajustes de design (cards).
 ESTADO ATUAL: A fundação está 100% operacional e validada (commitado no GitHub).
+FASE 6 — EXPANSÃO DO ACERVO E UX MOBILE/TRIAGEM (nov/2026): Adição das 10
+  minutas do "Pacote Pesado", fluxo mobile passo a passo na página de
+  documento, ajuste do @media print, sticky footer global, polimento visual
+  calmo na Home, Assistente de Triagem (Wizard) com grid inicial e lista
+  editorial nas etapas seguintes, e menu mobile hambúrguer concluído.
+ESTADO ATUAL: Fundação consolidada e expansões concluídas/estabilizadas
+  (restando conferência final de minutas/sincronia de IDs antes do commit).
 
 
 --------------------------------------------------------------------------------
@@ -230,15 +237,20 @@ FLUXO DE IMPRESSÃO:
 9. DÍVIDAS TÉCNICAS E ARMADILHAS CONHECIDAS
 --------------------------------------------------------------------------------
 
-  - CORS: A página documento.html usa fetch() para ler o JSON. Abrir o HTML 
-    com duplo clique NÃO FUNCIONA. Precisa do Live Server (localhost) ou 
+- CORS: A página documento.html usa fetch() para ler o JSON. Abrir o HTML
+    com duplo clique NÃO FUNCIONA. Precisa do Live Server (localhost) ou
     de um servidor estático (GitHub Pages).
-  - Cache: Se as alterações de CSS/JS não aparecerem, usar Ctrl+Shift+R no 
+  - Cache: Se as alterações de CSS/JS não aparecerem, usar Ctrl+Shift+R no
     navegador para limpar o cache.
-  - Backspace em inputs com máscara: Editar o meio de um CPF pode fazer o 
+  - Backspace em inputs com máscara: Editar o meio de um CPF pode fazer o
     cursor pular para o final. (Funcional, mas pode ser refinado no futuro).
-  - Acervo Inicial: O JSON tem 8 minutas. Ainda faltam documentos de Pequenas 
-    Causas (Ação de Cobrança, Dano Moral, etc.) e contratos.
+  - Impressão em simulador interno do editor: Chamadas de impressão em
+    webviews/iframes do VS Code podem ser bloqueadas ou limitar o teste; testar
+    no navegador real (e em celular físico na rede local).
+  - Expansão do Acervo: Verificar o total exato de minutas ativas no JSON após
+    a adição das 10 minutas e manter os IDs apontados pelo triagem.json
+    sincronizados com acervo-minutas.json.
+    
 
 
 10. ROTEIRO FUTURO (roadmap acordado)
@@ -251,11 +263,18 @@ FLUXO DE IMPRESSÃO:
   2. ASSISTENTE DE TRIAGEM (A "Nova Busca"): Substituir a barra de busca simples 
      por um fluxo de perguntas (Wizard) na Home. Ex: "O que você precisa?" -> 
      "Problema com Vizinho" -> "Barulho" -> Exibe o documento pronto.
-  3. DIRETÓRIO DE EMERGÊNCIA: Criar uma seção ou página com botões de discagem 
+  CONCLUÍDOS RECENTEMENTE:
+  - Expansão do Acervo ("Pacote Pesado" — 10 minutas adicionadas).
+  - Fluxo mobile de documento, ajustes de impressão A4 e sticky footer.
+  - Assistente de Triagem (Wizard) na Home (grid inicial + lista editorial).
+  - Menu mobile / hambúrguer (concluído e testado).
+
+  PRÓXIMOS (na ordem):
+  3. DIRETÓRIO DE EMERGÊNCIA: Criar uma seção ou página com botões de discagem
      direta via celular (tel:190, tel:192, Disque 100, 180).
-  4. GUIA "ONDE ENTREGAR": Adicionar links oficiais (Consumidor.gov.br, Fala.BR) 
+  4. GUIA "ONDE ENTREGAR": Adicionar links oficiais (Consumidor.gov.br, Fala.BR)
      e checklist de anexos na página documento.html.
-  5. LEITOR DE VOZ (Acessibilidade): Implementar a Web Speech API (window.speechSynthesis) 
+  5. LEITOR DE VOZ (Acessibilidade): Implementar a Web Speech API (window.speechSynthesis)
      para ler o texto da minuta em voz alta para pessoas cegas.
   6. Testar o layout mobile em aparelhos reais e Publicar no GitHub Pages.
   7. Criar o roteiro de apresentação para a banca.

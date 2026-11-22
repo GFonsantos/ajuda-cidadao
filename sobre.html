@@ -18,7 +18,7 @@
                 <img src="assets/icons/logo.jpg" alt="Ajuda Cidadão" class="logo-img">
             </a>
             
-            <nav class="menu-principal" aria-label="Navegação principal">
+            <nav class="menu-principal" id="menu-principal" aria-label="Navegação principal">
                 <!-- O JS vai adicionar a classe 'ativo' automaticamente -->
                 <a href="index.html" class="menu-link">Início</a>
                 <a href="biblioteca.html" class="menu-link">Biblioteca</a>
@@ -36,6 +36,11 @@
                 <button id="btn-diminuir-fonte" title="Diminuir fonte">A-</button>
                 <button id="btn-alto-contraste" title="Alternar alto contraste">🌓</button>
             </div>
+
+            <!-- Botão Hamburger (Só aparece no celular) -->
+            <button class="menu-hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
         </div>
 
         <!-- MEGA MENU (Full-Width) -->
