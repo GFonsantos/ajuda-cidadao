@@ -121,13 +121,60 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
 
         // Evento que atualiza o texto em tempo real
-        input.addEventListener('input', atualizarTextoDocumento);
+                input.addEventListener('input', atualizarTextoDocumento);
 
-        grupo.appendChild(label);
-        grupo.appendChild(input);
-        elFormulario.appendChild(grupo);
-      });
-    }
+                // --- VALIDAÇÃO DE CPF ---
+                        if (nomeUpper.includes('CPF')) {
+                          input.addEventListener('blur', (e) => {
+                            const valor = e.target.value.trim();
+                            const apenasNumeros = Mascaras.apenasNumeros(valor);
+            
+                            // Remove erro anterior se existir
+                            const erroExistente = grupo.querySelector('.mensagem-erro');
+                            if (erroExistente) erroExistente.remove();
+                            input.classList.remove('input-erro');
+
+                            // Só valida se o campo não estiver vazio e tiver 11 dígitos
+                            if (apenasNumeros.length === 11) {
+                              if (!Mascaras.validarCPF(valor)) {
+                                input.classList.add('input-erro');
+                                const msgErro = document.createElement('span');
+                                msgErro.className = 'mensagem-erro';
+                                msgErro.textContent = 'CPF inválido. Verifique os números digitados.';
+                                grupo.appendChild(msgErro);
+                              }
+                            }
+                          });
+                        }
+
+                        // --- VALIDAÇÃO DE DATA ---
+                        if (nomeUpper.includes('DATA') || nomeUpper.includes('NASCIMENTO')) {
+                          input.addEventListener('blur', (e) => {
+                            const valor = e.target.value.trim();
+            
+                            // Remove erro anterior se existir
+                            const erroExistente = grupo.querySelector('.mensagem-erro');
+                            if (erroExistente) erroExistente.remove();
+                            input.classList.remove('input-erro');
+
+                            // Só valida se o campo não estiver vazio e tiver o formato completo DD/MM/AAAA
+                            if (valor.length === 10) {
+                              if (!Mascaras.validarData(valor)) {
+                                input.classList.add('input-erro');
+                                const msgErro = document.createElement('span');
+                                msgErro.className = 'mensagem-erro';
+                                msgErro.textContent = 'Data inválida. Verifique o dia, mês e ano digitados.';
+                                grupo.appendChild(msgErro);
+                              }
+                            }
+                          });
+                        }
+
+                        grupo.appendChild(label);
+                        grupo.appendChild(input);
+                        elFormulario.appendChild(grupo);
+                      });
+                    }
 
     // 4. Função que substitui os dados no texto
     function atualizarTextoDocumento() {

@@ -176,6 +176,7 @@
 /* Estilo dos campos gerados dinamicamente */
 .campo-grupo {
   margin-bottom: var(--espaco-medio);
+  position: relative;
 }
 .campo-grupo label {
   display: block;
@@ -192,6 +193,20 @@
   border-radius: var(--cor-borda);
   font-family: var(--fonte-base);
   font-size: 1rem;
+}
+
+/* NOVO: Estilos de erro de validação */
+.campo-grupo input.input-erro {
+  border-color: var(--cor-alerta);
+  background-color: #fff7f6;
+}
+
+.mensagem-erro {
+  color: var(--cor-alerta);
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+  display: block;
+  font-weight: 500;
 }
 
 .campo-grupo textarea {
