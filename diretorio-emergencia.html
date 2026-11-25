@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diretório de Emergência - Ajuda Cidadão</title>
+    <meta name="description" content="Telefones de emergência no Brasil: Polícia 190, SAMU 192, Bombeiros 193, Direitos Humanos 100 e mais. Acesso rápido pelo celular, sem cadastro.">
+    
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/componentes.css">
+    <link rel="stylesheet" href="css/diretorio.css">
+</head>
+<body>
+
+    <header class="cabecalho no-print">
+        <div class="cabecalho-conteudo">
+            <a href="index.html" class="logo" aria-label="Página inicial do Ajuda Cidadão">
+                <img src="assets/icons/logo.jpg" alt="Ajuda Cidadão" class="logo-img">
+            </a>
+            
+            <nav class="menu-principal" id="menu-principal" aria-label="Navegação principal">
+                <a href="index.html" class="menu-link">Início</a>
+                <a href="biblioteca.html" class="menu-link">Biblioteca</a>
+                
+                <button class="menu-mega-btn" aria-haspopup="true" aria-expanded="false">
+                    Categorias <span class="seta">▾</span>
+                </button>
+                
+                <a href="diretorio-emergencia.html" class="menu-link">Emergência</a>
+                <a href="guia-protocolo.html" class="menu-link">Como Protocolar</a>
+                <a href="sobre.html" class="menu-link">Privacidade</a>
+            </nav>
+
+            <div class="barra-acessibilidade" aria-label="Controles de acessibilidade">
+                <button id="btn-aumentar-fonte" title="Aumentar fonte">A+</button>
+                <button id="btn-diminuir-fonte" title="Diminuir fonte">A-</button>
+                <button id="btn-alto-contraste" title="Alternar alto contraste">🌓</button>
+            </div>
+
+            <button class="menu-hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+        </div>
+
+        <div class="mega-menu" id="mega-menu">
+            <div class="mega-menu-conteudo">
+                <div class="mega-coluna">
+                    <h3><a href="biblioteca.html?cat=saude">Saúde Pública</a></h3>
+                    <p>Medicamentos, consultas e direitos no SUS.</p>
+                </div>
+                <div class="mega-coluna">
+                    <h3><a href="biblioteca.html?cat=consumidor">Direitos do Consumidor</a></h3>
+                    <p>Cobranças abusivas, cancelamentos e defeitos.</p>
+                </div>
+                <div class="mega-coluna">
+                    <h3><a href="biblioteca.html?cat=bairro">Infraestrutura do Bairro</a></h3>
+                    <p>Buracos na rua, iluminação e saneamento.</p>
+                </div>
+                <div class="mega-coluna">
+                    <h3><a href="biblioteca.html?cat=educacao">Educação e Creches</a></h3>
+                    <p>Vagas em creches e escolas municipais.</p>
+                </div>
+                <div class="mega-coluna">
+                    <h3><a href="biblioteca.html?cat=habitacao">Habitação e Isenções</a></h3>
+                    <p>Isenção de IPTU, contratos e direitos.</p>
+                </div>
+                <div class="mega-coluna">
+                    <h3><a href="biblioteca.html?cat=servicos">Serviços Essenciais</a></h3>
+                    <p>Corte de água, luz e religação.</p>
+                </div>
+                <div class="mega-coluna">
+                    <h3><a href="biblioteca.html?cat=pequenas-causas">Pequenas Causas</a></h3>
+                    <p>Cobranças, acidentes e danos do dia a dia.</p>
+                </div>
+                <div class="mega-coluna">
+                    <h3><a href="biblioteca.html?cat=seguranca">Segurança Pública</a></h3>
+                    <p>Abuso de autoridade, denúncias e BO.</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container pagina-diretorio">
+        <h1>Diretório de Emergência</h1>
+        <p class="intro-diretorio">Em caso de risco imediato, ligue direto para o serviço abaixo. Funciona em qualquer celular, mesmo sem crédito, e não precisa de documento, cadastro ou login.</p>
+
+        <div class="aviso-urgencia">
+            <h2>Risco de vida agora?</h2>
+            <p>Ligue <strong>190</strong> (Polícia Militar) ou <strong>192</strong> (SAMU). Esses são os dois números que salvam vidas — não espere, ligue imediatamente.</p>
+        </div>
+
+        <div id="status-copia" class="sr-only" role="status" aria-live="polite"></div>
+
+        <!-- GRUPO 1 — EMERGÊNCIAS -->
+        <section class="grupo-emergencia">
+            <h2 class="grupo-titulo">Emergências</h2>
+            <div class="grid-emergencia">
+                <article class="card-emergencia">
+                    <h3>Polícia Militar</h3>
+                    <a href="tel:190" class="numero-emergencia" aria-label="Ligar para a Polícia Militar, número 190">190</a>
+                    <p>Crime em andamento, risco imediato à vida ou flagrante.</p>
+                    <button type="button" class="btn-copiar" data-numero="190" aria-label="Copiar número 190">Copiar número</button>
+                </article>
+                <article class="card-emergencia">
+                    <h3>SAMU</h3>
+                    <a href="tel:192" class="numero-emergencia" aria-label="Ligar para o SAMU, número 192">192</a>
+                    <p>Emergências médicas, risco de vida, acidentes graves.</p>
+                    <button type="button" class="btn-copiar" data-numero="192" aria-label="Copiar número 192">Copiar número</button>
+                </article>
+                <article class="card-emergencia">
+                    <h3>Bombeiros</h3>
+                    <a href="tel:193" class="numero-emergencia" aria-label="Ligar para os Bombeiros, número 193">193</a>
+                    <p>Incêndios, resgates, salvamento em altura ou água.</p>
+                    <button type="button" class="btn-copiar" data-numero="193" aria-label="Copiar número 193">Copiar número</button>
+                </article>
+                <article class="card-emergencia">
+                    <h3>Defesa Civil</h3>
+                    <a href="tel:199" class="numero-emergencia" aria-label="Ligar para a Defesa Civil, número 199">199</a>
+                    <p>Enchentes, deslizamentos e evacuação de área de risco.</p>
+                    <button type="button" class="btn-copiar" data-numero="199" aria-label="Copiar número 199">Copiar número</button>
+                </article>
+            </div>
+        </section>
+
+        <!-- GRUPO 2 — SEGURANÇA INVESTIGATIVA -->
+        <section class="grupo-emergencia">
+            <h2 class="grupo-titulo">Segurança e Investigação</h2>
+            <div class="grid-emergencia">
+                <article class="card-emergencia">
+                    <h3>Polícia Civil</h3>
+                    <a href="tel:197" class="numero-emergencia" aria-label="Ligar para a Polícia Civil, número 197">197</a>
+                    <p>Registro de boletim de ocorrência e investigação de crimes.</p>
+                    <button type="button" class="btn-copiar" data-numero="197" aria-label="Copiar número 197">Copiar número</button>
+                </article>
+                <article class="card-emergencia">
+                    <h3>Polícia Federal</h3>
+                    <a href="tel:194" class="numero-emergencia" aria-label="Ligar para a Polícia Federal, número 194">194</a>
+                    <p>Crimes federais, fronteiras e crimes cibernéticos.</p>
+                    <button type="button" class="btn-copiar" data-numero="194" aria-label="Copiar número 194">Copiar número</button>
+                </article>
+            </div>
+            <p class="link-minuta-relacionada">
+                Prefere registrar por escrito, com calma e sem pressa?
+                <a href="documento.html?id=seguranca-noticia-de-fato">Use nosso modelo de Notícia de Fato &rarr;</a>
+            </p>
+        </section>
+
+        <!-- GRUPO 3 — SAÚDE E APOIO EMOCIONAL -->
+        <section class="grupo-emergencia">
+            <h2 class="grupo-titulo">Saúde e Apoio Emocional</h2>
+            <div class="grid-emergencia">
+                <article class="card-emergencia">
+                    <h3>Disque Saúde (SUS)</h3>
+                    <a href="tel:136" class="numero-emergencia" aria-label="Ligar para o Disque Saúde, número 136">136</a>
+                    <p>Informações sobre SUS, vacinas, medicamentos e atendimento.</p>
+                    <button type="button" class="btn-copiar" data-numero="136" aria-label="Copiar número 136">Copiar número</button>
+                </article>
+                <article class="card-emergencia">
+                    <h3>CVV — Apoio Emocional</h3>
+                    <a href="tel:188" class="numero-emergencia" aria-label="Ligar para o CVV, número 188">188</a>
+                    <p>Apoio emocional gratuito 24h. Prevenção ao suicídio.</p>
+                    <button type="button" class="btn-copiar" data-numero="188" aria-label="Copiar número 188">Copiar número</button>
+                </article>
+            </div>
+        </section>
+
+        <!-- GRUPO 4 — DIREITOS HUMANOS -->
+        <section class="grupo-emergencia">
+            <h2 class="grupo-titulo">Direitos Humanos</h2>
+            <div class="grid-emergencia">
+                <article class="card-emergencia">
+                    <h3>Disque Direitos Humanos</h3>
+                    <a href="tel:100" class="numero-emergencia" aria-label="Ligar para o Disque Direitos Humanos, número 100">100</a>
+                    <p>Violência contra crianças, idosos ou pessoas com deficiência.</p>
+                    <button type="button" class="btn-copiar" data-numero="100" aria-label="Copiar número 100">Copiar número</button>
+                </article>
+                <article class="card-emergencia">
+                    <h3>Central de Atendimento à Mulher</h3>
+                    <a href="tel:180" class="numero-emergencia" aria-label="Ligar para a Central de Atendimento à Mulher, número 180">180</a>
+                    <p>Violência contra a mulher. Gratuito, sigiloso, 24h.</p>
+                    <button type="button" class="btn-copiar" data-numero="180" aria-label="Copiar número 180">Copiar número</button>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="rodape no-print">
+        <p>Projeto Acadêmico de Utilidade Pública • 100% Gratuito e Sem Coleta de Dados</p>
+        <p>Telefones Úteis: SAMU 192 | Defesa Civil 199 | Disque Direitos Humanos 100</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/diretorio.js"></script>
+</body>
+</html>

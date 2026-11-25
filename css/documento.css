@@ -370,3 +370,211 @@
   }
 }
 
+/* ================================================================
+   BLOCO EXTRA — ONDE ENTREGAR + CHECKLIST + CANAIS OFICIAIS
+   
+   O que faz: Estiliza os 3 blocos de orientação prática que
+              aparecem na página documento.html. Todos são no-print
+              (não vão para o PDF).
+   Depende de: variaveis.css
+   Mexe em: documento.html e documento.js
+   ================================================================ */
+
+/* --- Bloco A: "Onde entregar" (details/summary) --- */
+.bloco-onde-entregar {
+  background-color: var(--cor-primaria-clara);
+  border: 1px solid #bfdbfe;
+  border-radius: var(--borda-arredondada);
+  padding: var(--espaco-pequeno) var(--espaco-medio);
+  margin-bottom: var(--espaco-medio);
+  font-size: 0.9rem;
+}
+
+.bloco-onde-entregar summary {
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--cor-primaria-escura);
+  padding: var(--espaco-pequeno) 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.bloco-onde-entregar summary::-webkit-details-marker {
+  display: none;
+}
+
+.bloco-onde-entregar summary::before {
+  content: '▸';
+  transition: transform 0.2s ease;
+  display: inline-block;
+  font-size: 0.75rem;
+}
+
+.bloco-onde-entregar[open] summary::before {
+  transform: rotate(90deg);
+}
+
+.bloco-onde-entregar p {
+  margin: var(--espaco-pequeno) 0 var(--espaco-medio) 0;
+  color: var(--cor-texto);
+  white-space: pre-wrap;
+  line-height: 1.55;
+}
+
+/* --- Bloco extra: wrapper que agrupa checklist + canais --- */
+.bloco-extra-documento {
+  margin-top: var(--espaco-grande);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--espaco-grande);
+}
+
+@media (min-width: 992px) {
+  .bloco-extra-documento {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* --- Bloco B: Checklist de anexos --- */
+.bloco-anexos {
+  background-color: var(--cor-fundo-caixa);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--borda-arredondada);
+  padding: var(--espaco-medio);
+}
+
+.bloco-anexos h2 {
+  font-size: 1.125rem;
+  margin-bottom: var(--espaco-pequeno);
+  color: var(--cor-texto);
+}
+
+.bloco-anexos-instrucao {
+  font-size: 0.8rem;
+  color: var(--cor-texto-leve);
+  margin-bottom: var(--espaco-medio);
+  line-height: 1.5;
+}
+
+.lista-anexos {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lista-anexos li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.lista-anexos li:last-child {
+  border-bottom: none;
+}
+
+.checkbox-anexo {
+  margin-top: 0.25rem;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  flex-shrink: 0;
+  accent-color: var(--cor-primaria);
+}
+
+.lista-anexos label {
+  cursor: pointer;
+  font-size: 0.875rem;
+  flex: 1;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* --- Bloco C: Canais oficiais --- */
+.bloco-canais {
+  background-color: var(--cor-fundo-caixa);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--borda-arredondada);
+  padding: var(--espaco-medio);
+}
+
+.bloco-canais h2 {
+  font-size: 1.125rem;
+  margin-bottom: var(--espaco-pequeno);
+  color: var(--cor-texto);
+}
+
+.bloco-canais > p {
+  font-size: 0.875rem;
+  color: var(--cor-texto-leve);
+  margin-bottom: var(--espaco-medio);
+}
+
+.grid-canais {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--espaco-pequeno);
+}
+
+@media (min-width: 480px) {
+  .grid-canais {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.card-canal {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: var(--espaco-pequeno) var(--espaco-medio);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--borda-arredondada);
+  background-color: var(--cor-fundo-caixa);
+  text-decoration: none;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.card-canal:hover {
+  border-color: var(--cor-primaria);
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.card-canal strong {
+  color: var(--cor-primaria);
+  font-size: 0.9rem;
+}
+
+.card-canal span {
+  font-size: 0.8rem;
+  color: var(--cor-texto-leve);
+  line-height: 1.4;
+}
+
+/* --- Alto Contraste --- */
+body.alto-contraste .bloco-onde-entregar {
+  background-color: #111111;
+  border-color: #ffff00;
+}
+
+body.alto-contraste .bloco-onde-entregar summary {
+  color: #ffff00;
+}
+
+body.alto-contraste .bloco-anexos,
+body.alto-contraste .bloco-canais {
+  background-color: #111111;
+  border-color: #ffff00;
+}
+
+body.alto-contraste .card-canal {
+  border-color: #ffff00;
+}
+
+body.alto-contraste .card-canal strong {
+  color: #ffff00;
+}
+

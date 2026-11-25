@@ -281,3 +281,29 @@
 .grid-categorias .card:hover .btn-card::after {
   transform: translateX(4px);
 }
+
+/* Botão que leva ao Diretório de Emergência (na seção ajuda-adicional) */
+.btn-emergencia-home {
+  display: inline-block;
+  margin-top: var(--espaco-grande);
+  padding: 0.75rem 1.5rem;
+  background-color: var(--cor-alerta);
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-emergencia-home:hover {
+  background-color: #c2410c;
+  text-decoration: none;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(234, 88, 12, 0.3);
+}
+
+body.alto-contraste .btn-emergencia-home {
+  background-color: #ffff00;
+  color: #000000;
+}

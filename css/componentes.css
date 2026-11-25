@@ -286,3 +286,26 @@ body.alto-contraste .btn-card {
   line-height: 1.4;
   margin: 0;
 }
+
+/* =========================================
+   LINK "EMERGÊNCIA" — DIFERENCIAÇÃO SUTIL
+   Vermelho opaco quando inativo; estado ativo segue o padrão azul dos outros.
+   ========================================= */
+.menu-principal .menu-link[href="diretorio-emergencia.html"]:not(.ativo) {
+  color: #b91c1c;
+}
+
+.menu-principal .menu-link[href="diretorio-emergencia.html"]:not(.ativo):hover {
+  color: #991b1b;
+  background-color: #fef2f2;
+}
+
+/* Alto Contraste: mantém amarelo como os outros links */
+body.alto-contraste .menu-principal .menu-link[href="diretorio-emergencia.html"]:not(.ativo) {
+  color: #ffff00;
+}
+
+body.alto-contraste .menu-principal .menu-link[href="diretorio-emergencia.html"]:not(.ativo):hover {
+  background-color: #333333;
+  color: #ffff00;
+}

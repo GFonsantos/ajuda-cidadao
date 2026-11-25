@@ -60,6 +60,37 @@ document.addEventListener('DOMContentLoaded', async () => {
     elTitulo.textContent = minuta.titulo;
     elResumo.textContent = minuta.resumo;
 
+    // --- NOVO: preenche "Onde entregar" (Bloco A) ---
+    const elBlocoOnde = document.getElementById('bloco-onde-entregar');
+    const elConteudoOnde = document.getElementById('conteudo-onde-entregar');
+    if (minuta.onde_entregar && elBlocoOnde && elConteudoOnde) {
+      elConteudoOnde.textContent = minuta.onde_entregar;
+      elBlocoOnde.hidden = false;
+    }
+
+    // --- NOVO: preenche "O que levar junto" (Bloco B) ---
+    const elBlocoAnexos = document.getElementById('bloco-anexos');
+    const elListaAnexos = document.getElementById('lista-anexos');
+    if (minuta.documentos_anexos && minuta.documentos_anexos.length > 0 && elBlocoAnexos && elListaAnexos) {
+      elListaAnexos.innerHTML = '';
+      minuta.documentos_anexos.forEach((anexo, idx) => {
+        const li = document.createElement('li');
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.id = `anexo-${idx}`;
+        checkbox.className = 'checkbox-anexo';
+
+        const label = document.createElement('label');
+        label.htmlFor = `anexo-${idx}`;
+        label.textContent = anexo;
+
+        li.appendChild(checkbox);
+        li.appendChild(label);
+        elListaAnexos.appendChild(li);
+      });
+      elBlocoAnexos.hidden = false;
+    }
+
     // 2. Extrai os campos entre colchetes do texto original
     const regexCampos = /\[(.*?)\]/g;
     const camposEncontrados = minuta.texto_minuta.match(regexCampos) || [];

@@ -27,6 +27,7 @@
                     Categorias <span class="seta">▾</span>
                 </button>
                 
+                <a href="diretorio-emergencia.html" class="menu-link">Emergência</a>
                 <a href="guia-protocolo.html" class="menu-link">Como Protocolar</a>
                 <a href="sobre.html" class="menu-link">Privacidade</a>
             </nav>
@@ -65,6 +66,18 @@
                 <div class="mega-coluna">
                     <h3><a href="biblioteca.html?cat=habitacao">Habitação e Isenções</a></h3>
                     <p>Isenção de IPTU, contratos e direitos.</p>
+                </div>
+                <div class="mega-coluna">
+                    <h3><a href="biblioteca.html?cat=servicos">Serviços Essenciais</a></h3>
+                    <p>Corte de água, luz e religação.</p>
+                </div>
+                <div class="mega-coluna">
+                    <h3><a href="biblioteca.html?cat=pequenas-causas">Pequenas Causas</a></h3>
+                    <p>Cobranças, acidentes e danos do dia a dia.</p>
+                </div>
+                <div class="mega-coluna">
+                    <h3><a href="biblioteca.html?cat=seguranca">Segurança Pública</a></h3>
+                    <p>Abuso de autoridade, denúncias e BO.</p>
                 </div>
             </div>
         </div>
@@ -111,9 +124,38 @@
                         🖨️ Imprimir / Salvar em PDF
                     </button>
                 </div>
+
+                <details class="bloco-onde-entregar no-print" id="bloco-onde-entregar" hidden>
+                    <summary>Onde entregar este documento</summary>
+                    <p id="conteudo-onde-entregar"></p>
+                </details>
                 
                 <div id="texto-minuta-container" class="folha-a4">
                     <div id="texto-minuta">Carregando documento...</div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Bloco extra: checklist de anexos + canais oficiais -->
+        <div class="bloco-extra-documento no-print">
+            <section class="bloco-anexos" id="bloco-anexos" hidden>
+                <h2>O que levar junto</h2>
+                <p class="bloco-anexos-instrucao">Marque conforme for separando. Esta lista não vai para o PDF — é só para você não esquecer.</p>
+                <ul id="lista-anexos" class="lista-anexos"></ul>
+            </section>
+
+            <section class="bloco-canais">
+                <h2>Não é caso de documento?</h2>
+                <p>Tente um destes canais oficiais:</p>
+                <div class="grid-canais">
+                    <a href="https://www.consumidor.gov.br" target="_blank" rel="noopener noreferrer" class="card-canal">
+                        <strong>Consumidor.gov.br</strong>
+                        <span>Problemas com empresas (cobrança, produto com defeito, cancelamento).</span>
+                    </a>
+                    <a href="https://falabr.cgu.gov.br" target="_blank" rel="noopener noreferrer" class="card-canal">
+                        <strong>Fala.BR</strong>
+                        <span>Reclamações, denúncias e pedidos a órgãos públicos federais.</span>
+                    </a>
                 </div>
             </section>
         </div>

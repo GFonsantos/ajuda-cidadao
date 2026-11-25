@@ -43,6 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
           'educacao': 'Educação e Creches',
           'habitacao': 'Habitação e Isenções',
           'servicos': 'Serviços Essenciais',
+          'seguranca': 'Segurança Pública',
           'pequenas-causas': 'Pequenas Causas'
         };
         if (mapaCat[catParam]) {
