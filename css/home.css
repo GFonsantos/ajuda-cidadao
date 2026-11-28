@@ -307,3 +307,40 @@ body.alto-contraste .btn-emergencia-home {
   background-color: #ffff00;
   color: #000000;
 }
+
+/* ===== Hero com ilustração de fundo (à direita, atrás do conteúdo) ===== */
+.hero {
+    position: relative;
+    background-color: #2563eb;   /* azul base — liga com o azul da imagem */
+    overflow: hidden;
+}
+
+/* A ilustração entra aqui, como camada decorativa atrás do texto */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 55%;                  /* ocupa só a metade direita no desktop */
+    background-image: url('../assets/imagens/hero-cidadaos.png');
+    background-repeat: no-repeat;
+        background-position: 0% center; /* 80% da esquerda = 20% de distância da direita */
+    background-size: auto 100%;  /* altura total, largura proporcional (sem distorcer) */
+    opacity: 0.9;                /* 0.9 = quase cheia; baixe p/ fundir mais */
+    z-index: 0;
+    pointer-events: none;        /* não rouba cliques da busca */
+}
+
+/* Garante que título, subtítulo e busca fiquem NA FRENTE da imagem */
+.hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Mobile: a ilustração vira um toque sutil atrás do texto (não polui) */
+@media (max-width: 768px) {
+    .hero::before {
+        display: none;
+    }
+}
