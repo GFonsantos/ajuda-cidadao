@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const elTitulo = document.getElementById('titulo-documento');
   const elResumo = document.getElementById('resumo-documento');
   const elFormulario = document.getElementById('formulario-dinamico');
-  const elTextoMinuta = document.getElementById('texto-minuta');
+const elTextoMinuta = document.getElementById('texto-minuta-container');
 
   // --- CONTROLE DE NAVEGAÇÃO MOBILE (FORMULÁRIO <-> DOCUMENTO) ---
   const btnConferir = document.getElementById('btn-conferir');
@@ -106,10 +106,28 @@ document.addEventListener('DOMContentLoaded', async () => {
         const grupo = document.createElement('div');
         grupo.className = 'campo-grupo';
         
-        const label = document.createElement('label');
-        label.textContent = nome.charAt(0).toUpperCase() + nome.slice(1).toLowerCase();
-        
-        const nomeUpper = nome.toUpperCase();
+                     const label = document.createElement('label');
+                     label.textContent = nome.charAt(0).toUpperCase() + nome.slice(1).toLowerCase();
+                     
+                     // --- Botão de ler o nome do campo (só aparece com Modo PCD ativo) ---
+                     const btnLerCampo = document.createElement('button');
+                     btnLerCampo.type = 'button';
+                     btnLerCampo.className = 'btn-ler-campo';
+                     btnLerCampo.setAttribute('aria-label', `Ler o nome deste campo: ${label.textContent}`);
+                     btnLerCampo.innerHTML = `
+                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                         <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                         <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                       </svg>
+                     `;
+                     btnLerCampo.addEventListener('click', () => {
+                       if (window.AjudaLeitor && window.AjudaLeitor.lerCampo) {
+                         window.AjudaLeitor.lerCampo(label.textContent);
+                       }
+                     });
+
+                     const nomeUpper = nome.toUpperCase();
 
         // Se o campo pedir descrição ou texto longo, usamos textarea
         const isTextoLongo = nomeUpper.includes('DESCREVER') || nomeUpper.includes('PROBLEMA') || nomeUpper.includes('MOTIVO') || nomeUpper.includes('RELATO');
@@ -201,7 +219,13 @@ document.addEventListener('DOMContentLoaded', async () => {
                           });
                         }
 
-                        grupo.appendChild(label);
+                     // Container flex para label + botão de ler
+                     const labelContainer = document.createElement('div');
+                        labelContainer.className = 'label-container';
+                        labelContainer.appendChild(label);
+                        labelContainer.appendChild(btnLerCampo);
+                        
+                        grupo.appendChild(labelContainer);
                         grupo.appendChild(input);
                         elFormulario.appendChild(grupo);
                       });

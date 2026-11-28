@@ -1,0 +1,171 @@
+/* ================================================================
+LEITOR DE VOZ E MODO PCD
+O que faz: Estiliza a barra do leitor, o botão Modo PCD e os
+botões de "ler campo" ao lado dos labels.
+Depende de: variaveis.css
+================================================================ */
+
+/* --- Botão Modo PCD (Barra de Acessibilidade) --- */
+.btn-modo-pcd {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: transparent;
+    border: 1px solid var(--cor-borda);
+    color: var(--cor-texto-leve);
+    padding: 0.4rem 0.8rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+}
+.btn-modo-pcd:hover {
+    background-color: var(--cor-primaria-clara);
+    color: var(--cor-primaria);
+    border-color: var(--cor-primaria);
+}
+.btn-modo-pcd[aria-pressed="true"] {
+    background-color: var(--cor-primaria);
+    color: white;
+    border-color: var(--cor-primaria);
+}
+.btn-modo-pcd svg { flex-shrink: 0; }
+
+/* --- Barra do Leitor --- */
+.barra-leitor[hidden] { display: none !important; }
+.barra-leitor {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espaco-pequeno);
+    background-color: var(--cor-fundo-caixa);
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--borda-arredondada);
+    padding: var(--espaco-pequeno) var(--espaco-medio);
+    margin-bottom: var(--espaco-medio);
+}
+.btn-leitor {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background-color: transparent;
+    border: 1px solid var(--cor-borda);
+    color: var(--cor-texto);
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.65rem 0.9rem;
+    border-radius: var(--borda-arredondada);
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+.btn-leitor svg { flex-shrink: 0; }
+.btn-leitor:hover:not(:disabled) {
+    background-color: var(--cor-primaria-clara);
+    border-color: var(--cor-primaria);
+    color: var(--cor-primaria-escura);
+}
+.btn-leitor:disabled { opacity: 0.55; cursor: not-allowed; }
+.btn-leitor-principal {
+    align-self: flex-start;
+    background-color: var(--cor-primaria-clara);
+    border-color: var(--cor-primaria);
+    color: var(--cor-primaria-escura);
+}
+.btn-leitor-principal:hover:not(:disabled) {
+    background-color: var(--cor-primaria);
+    color: #ffffff;
+}
+.controles-leitor[hidden] { display: none !important; }
+.controles-leitor {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--espaco-pequeno);
+    align-items: center;
+}
+.velocidade-leitor {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.velocidade-leitor label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--cor-texto-leve);
+}
+.velocidade-leitor select {
+    flex: 1;
+    font-family: inherit;
+    font-size: 0.85rem;
+    padding: 0.45rem 0.5rem;
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--borda-arredondada);
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    cursor: pointer;
+}
+.status-leitor {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    color: var(--cor-texto-leve);
+    margin: 0;
+    min-height: 1.2rem;
+    line-height: 1.4;
+}
+#progresso-leitor { font-variant-numeric: tabular-nums; }
+
+@media (min-width: 768px) {
+    .barra-leitor { flex-direction: row; flex-wrap: wrap; align-items: center; gap: var(--espaco-medio); }
+    .controles-leitor { display: flex; flex-wrap: wrap; gap: var(--espaco-pequeno); }
+    .velocidade-leitor { grid-column: auto; }
+    .velocidade-leitor select { flex: 0 0 auto; min-width: 5.5rem; }
+    .status-leitor { flex: 1 1 100%; }
+}
+
+/* --- Botões de "Ler Campo" (ao lado do label) --- */
+.label-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.25rem;
+}
+.btn-ler-campo {
+    background: transparent;
+    border: none;
+    color: var(--cor-texto-leve);
+    cursor: pointer;
+    padding: 0.25rem;
+    border-radius: 4px;
+    display: none; /* Escondido por padrão */
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s ease, background-color 0.2s ease;
+    opacity: 0.6;
+}
+/* Só aparece quando o body tem a classe modo-pcd-ativo */
+body.modo-pcd-ativo .btn-ler-campo { display: flex; }
+.btn-ler-campo:hover, .btn-ler-campo:focus {
+    color: var(--cor-primaria);
+    background-color: var(--cor-primaria-clara);
+    opacity: 1;
+    outline: 2px solid var(--cor-primaria);
+    outline-offset: 2px;
+}
+.btn-ler-campo:active { transform: scale(0.95); }
+
+/* --- Alto Contraste --- */
+body.alto-contraste .btn-modo-pcd { border-color: #ffff00; color: #ffff00; }
+body.alto-contraste .btn-modo-pcd:hover, body.alto-contraste .btn-modo-pcd[aria-pressed="true"] { background-color: #ffff00; color: #000000; }
+body.alto-contraste .barra-leitor { border-color: #ffff00; background-color: #111111; }
+body.alto-contraste .btn-leitor { border-color: #ffff00; color: #ffff00; background-color: transparent; }
+body.alto-contraste .btn-leitor:hover:not(:disabled), body.alto-contraste .btn-leitor[aria-pressed="true"] { background-color: #ffff00; color: #000000; }
+body.alto-contraste .velocidade-leitor select { background-color: #000000; color: #ffff00; border-color: #ffff00; }
+body.alto-contraste .btn-ler-campo { color: #ffff00; opacity: 1; }
+body.alto-contraste .btn-ler-campo:hover, body.alto-contraste .btn-ler-campo:focus { background-color: #ffff00; color: #000000; }
+
+@media print { .barra-leitor { display: none !important; } }
